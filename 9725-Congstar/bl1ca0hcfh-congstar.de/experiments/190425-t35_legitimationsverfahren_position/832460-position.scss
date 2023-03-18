@@ -1,0 +1,39 @@
+$color_1: #fff;
+$background-color_1: #d95e0f;
+
+html {
+    body.bm-Congstar-T35 {
+        .bm-Congstar-T35-idnow {
+            order: 2;
+
+            .bucket__promotion {
+                display: none;
+            }
+        }
+
+        .bm-Congstar-T35-KlarnaIdent {
+            order: 3;
+        }
+
+        .bm-Congstar-T35-DHLIdentCheck {
+            order: 1;
+
+            .bm-t35-recomandedBadge {
+                content: "Unsere Empfehlung";
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 1px 6px;
+                font-size: 1rem;
+                font-weight: 700;
+                color: $color_1;
+                background-color: $background-color_1;
+                position: absolute;
+                top: -10px;
+                left: 15px;
+                display: inline-block;
+                max-width: calc(100% - 30px);
+            }
+        }
+    }
+}
