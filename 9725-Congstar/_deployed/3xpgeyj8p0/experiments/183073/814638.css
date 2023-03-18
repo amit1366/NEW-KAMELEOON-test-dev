@@ -1,0 +1,22 @@
+.kam-T30-hidden {
+  display: none !important;
+}
+
+.kam-T30-table tr > th:nth-child(3),
+.kam-T30-table tr > td:nth-child(3),
+.kam-T30-table .col-12.col-md-6.col-lg-3:nth-child(3),
+.kam-T30-table .row-template--1-col:nth-child(3),
+.kam-T30-table .ce-space-4:nth-child(4),
+.kam-T30-table .row-template--2-col:nth-child(4),
+.kam-T30-table .ce-space-md-5:nth-child(5),
+.kam-T30-table .ce-space-md-5:nth-child(6),
+.kam-T30-table.hidden-md-up tr > th:nth-child(3),
+.kam-T30-table.hidden-md-up tr > td:nth-child(3),
+.kam-T30-table.hidden-md-up .col-12.col-md-6.col-lg-3:nth-child(3),
+.kam-T30-table.hidden-md-up .row-template--1-col:nth-child(3),
+.kam-T30-table.hidden-md-up .ce-space-4:nth-child(4),
+.kam-T30-table.hidden-md-up .row-template--2-col:nth-child(4),
+.kam-T30-table.hidden-md-up .ce-space-md-5:nth-child(5),
+.kam-T30-table.hidden-md-up .ce-space-md-5:nth-child(6) {
+  display: none !important;
+}

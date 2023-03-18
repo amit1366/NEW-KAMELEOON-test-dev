@@ -1,0 +1,11 @@
+{
+    "projectName": "test creation automation",
+    "variations": [
+        "test varaition 1",
+        "test varaition 2"
+    ],
+    "goals": [
+        "test goal 1",
+        "test goal 2"
+    ]
+}

@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+# fecli.json
+package-lock.json
+yarn.lock
+
+# Build system
+_built
+.credentials
+credentials.json
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode
