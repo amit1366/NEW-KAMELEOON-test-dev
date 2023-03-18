@@ -1,0 +1,220 @@
+$planColor: #d85d0f;
+
+.kam-hide {
+    display: none;
+}
+#footnote .modal-content > * {
+    margin-right: 5px;
+    }
+body {
+    &.kam-modal-open {
+        position: relative;
+        overflow-y: hidden;
+        padding-right: 22px;
+    }
+}
+
+.kam-come-back {
+    position: relative;
+    background-image: url("http://storage.kameleoon.eu/congstar/welcome_back_modul/welcome-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    h2 {
+        color: $planColor;
+    }
+    &__teasers {
+        &:not(.slick-slider) {
+           display: flex;
+           flex-wrap: nowrap;
+           .kam-tile {
+                margin-right: 30px;
+                width: 290px;
+                min-width: 290px;
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-end;
+                &:nth-child(n+3){
+                    width: 195px;
+                    min-width: 195px;
+                }
+                > * {
+                    width: 100%;
+                }
+            }
+        }
+        .kam-tile {
+            margin-right: 30px;
+            width: 290px;
+            min-width: 290px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-end;
+            header {
+                height: 66px;
+            }
+        }
+    }
+    &.bg {
+        &-full {
+            background-size: 92% 85%;
+            .kam-come-back__image{
+                width: 43%;
+            }
+        }
+        &-hulf {
+            background-size: 96% 88%;
+            .kam-come-back__image {
+                width: 40%;
+            }
+        }
+    }
+    .slick {
+        &-list {
+            min-width: 100%;
+        }
+        &-track {
+            display: flex;
+            flex-flow: wrap-reverse;
+        }
+        &-slide {
+            margin-right: 30px;
+            width: 290px;
+            min-width: 290px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-end;
+            &:nth-child(n+3){
+                width: 195px;
+                min-width: 195px;
+            }
+            > * {
+                width: 100%;
+            }
+        }
+    }
+    .footnote {
+        cursor: pointer;
+        color: #000;
+    }
+    .kam-come-back__image {
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+        width: 50%;
+    }
+    .theme--postpaid header {
+        background: #d85d0f;
+        color: #fff;
+    }
+
+    .plan-bucket {
+        padding-bottom: 206.5px;
+        &__header {
+            padding: 18px 25px 19px;
+        }
+        &__background-image {
+            right: 0;
+        }
+        .teaser-price{
+            padding-bottom: 10px;
+        }
+        &__container {
+            min-height: 165px;
+            height: 165px;
+        }
+    }
+    .kam-plan-tile[plan-id="370"] .plan-bucket__container{
+        min-height: 168px;
+    }
+    hr {
+        height: 2px;
+    }
+    }
+    
+.kam-device-tile {
+    .device-teaser {
+        background: #fff;
+        max-width: 100%;
+        padding-bottom: 206.5px;
+        position: relative;
+        &__container {
+            position: relative;
+            padding: 15px;
+            min-height: 165px;
+            height: 165px;
+        }
+        &__image {
+            margin: auto;
+        }
+        &__image-link {
+            min-height: 140px;
+        }
+        &__title {
+            margin: 0;
+        }
+        &__header a {
+            padding: 18px 25px 19px;
+            height: inherit;
+        }
+    }
+    .configurator-selection__costs {
+        flex: 0 0 100%;
+        padding: 0;
+        max-width: 100%;
+        
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 25px;
+        .btn-primary {
+            margin-top: 7px;
+        }
+    }
+    .price {
+        color: #000;
+        &--large {
+            .price {
+                &__euro {
+                    padding-right: 1px;
+                    font-size: 4rem;
+                }
+                &__cent {
+                    position: absolute;
+                    top: 3px;
+                    font-size: 2rem;
+                }
+                &__rate {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        &-listing {
+           display: none;
+        }
+    }
+    .price__duration {
+        font-size: 0.9rem;
+        margin-top: 3px;
+    }
+}
+
+
+@media (min-width: 1160px){
+    .kam-come-back__teasers .slick-slide {
+        width: 325px;
+        min-width: 325px;
+    }
+}
+
+@media (max-width: 1100px){
+    .kam-come-back.bg-hulf .kam-come-back__image {
+        display: none;
+    }
+}
+@media (max-width: 630px){
+    .kam-come-back.bg-full .kam-come-back__image {
+        display: none;
+    }
+}

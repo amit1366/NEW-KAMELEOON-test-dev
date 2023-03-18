@@ -1,0 +1,279 @@
+.kam-margin-left {
+    margin-left: 25%;
+}
+
+.kam-mobile {
+    display: none;
+}
+
+.kam-desktop {
+    display: block;
+}
+
+.kam-hidden {
+    display: none;
+}
+
+.kam-T05-container.kam-width-50 {
+    width: 50%;
+    padding: 7.5px;
+
+    .kam-text {
+        width: 80%;
+    }
+}
+
+.kam-width-66 {
+    width: 66%;
+}
+
+.kam-width-100 {
+    width: 100%;
+}
+
+.kam-T05-container {
+    position: relative;
+    margin-top: 25px;
+
+    .kam-link {
+        cursor: pointer;
+        position: relative;
+        padding: 24px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        background-repeat: no-repeat;
+        background-image: url(https://storage.kameleoon.com/congstar/t26/background_desktop_long.png);
+        background-size: 100% 100%;
+        
+        .kam-content {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .kam-headline {
+                font-family: "Skizzed",Helvetica,Arial,sans-serif;
+                color: #FECB01;
+                font-size: 32px;
+                line-height: 32px;
+            }
+    
+            .kam-text {
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+    
+            .kam-button {
+                text-align: center;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: bold;
+
+                color: #000;
+                background-color: #FECB01;
+                
+                width: fit-content;
+                padding: 10px 12px 12px 12px;
+                border-radius: 4px;
+            }
+        }
+
+        .kam-desktop svg {
+            position: absolute;
+            right: 221px;
+            bottom: 100px;
+        }
+
+        .kam-desktop-img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .kam-link:hover {
+        color: #fff;
+    }
+}
+
+.kam-T05-container-TY {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 31px;
+
+    .kam-left, .kam-right {
+        width: 50%;
+        padding: 24px;
+        padding-bottom: 0;
+        position: relative;
+        background-image: url(https://storage.kameleoon.com/congstar/mdm-deep-sell/background_checkout.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: auto;
+
+        .kam-link {
+            display: flex;
+            flex-direction: column;    
+            position: relative;
+            text-decoration: none;
+            cursor: pointer;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            .kam-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 16px;
+
+                .kam-headline {
+                    font-family: "Skizzed",Helvetica,Arial,sans-serif;
+                    color: #FECB01;
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+
+                .kam-text {
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                    font-weight: bold;
+                }
+        
+                .kam-button {
+                    text-align: center;
+                    font-size: 16px;
+                    line-height: 16px;
+                    font-weight: bold;
+
+                    color: #000;
+                    background-color: #FECB01;
+                    
+                    padding: 12px;
+                    border-radius: 4px;
+                }
+            }
+            
+            .kam-desktop-image {
+                margin-left: 25%;
+            }
+        }
+
+    }
+
+    .kam-left .kam-desktop svg {
+        position: absolute;
+        left: 40px;
+        top: 0;
+    }
+
+    .kam-right svg {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 24px;
+    }
+}
+
+@media only screen and (max-width: 1159px) {
+    .kam-mobile {
+        display: block;
+    }
+
+    .kam-desktop {
+        display: none;
+    }
+
+    .kam-T05-container.kam-width-50 {
+        padding: unset;
+    }
+
+    .kam-T05-container.kam-margin-left {
+        margin-left: 8.33333%;
+        width: 83.33333%;
+    }
+
+    .kam-T05-container {
+
+        .kam-link {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            .kam-content {
+                width: 100%;
+                align-items: center;
+    
+                .kam-headline {
+                    font-size: 24px;
+                }
+    
+                .kam-text {
+                    font-size: 14px;
+                    text-align: center;
+                }
+
+                .kam-button {
+                    padding: 12px;
+                }
+            }
+        }
+
+        .kam-new {
+            position: absolute;
+            top: -10px;
+            left: 12px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .kam-T05-container.kam-margin-left {
+        margin-left: 0px;
+        width: 100%;
+    }
+
+    .kam-T05-container.kam-width-50 {
+        .kam-text {
+            width: 100%;
+        }
+    }
+
+    .kam-T05-container {
+        width: 100%;
+
+        .kam-link {
+            background-image: url(https://storage.kameleoon.com/congstar/mdm-deep-sell/backgrond_mobile.png);
+        }
+    }
+
+    .kam-T05-container-TY {
+        flex-direction: column;
+
+        .kam-left, .kam-right {
+            width: 100%;
+
+            .kam-new {
+                position: absolute;
+                top: -10px;
+            }
+        } 
+        
+        .kam-right svg {
+            width: unset;
+            position: unset;
+            bottom: unset;
+            margin-bottom: 24px;
+        }
+    }
+}
+

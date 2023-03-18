@@ -1,0 +1,33 @@
+{
+    "projectName": "[Congstar|T27] ENTEA Gerätedetailsseiten",
+    "variations": [
+        "ENTEA"
+    ],
+    "goalsToCreate": [
+        "[T27] Klick Farbe",
+        "[T27] Klick Speicher",
+        "[T27] Klick Vorbestellen",
+        "[T27] Klick Details",
+        "[T27] Klick thumbnails",
+        "[T27] Klick Payment",
+        "[T27] Klick Tech. Daten",
+        "[T27] Klick Versandinformationen"
+    ],
+    "goalsToAdd": [
+        277228,
+        223344,
+        186971,
+        236197,
+        234174,
+        234175,
+        200517,
+        200372,
+        215326,
+        215321,
+        215325,
+        215324,
+        215323,
+        215322
+    ],
+    "primaryGoal": 277228
+}

@@ -1,0 +1,25 @@
+@import './../../helpers/t15/Innerhalb_Tabelle.scss';
+
+.kam-label{
+    .kam-wrapper{
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 1160px){
+    transform: translateX(-80px);
+    }
+    @media (min-width: 1210px) and ( max-width:1270px) {
+        width: 110%;
+    }
+    @media (min-width: 1160px) and ( max-width:1210px) {
+        width: 120%;
+    }
+}
+@media (max-width: 1160px) {
+    checkout-product-table-device .cart-item__info{
+        display: flex;
+        flex-direction: column;
+    }
+    .kam-label{
+        transform: translateX(-80px);
+    }
+}

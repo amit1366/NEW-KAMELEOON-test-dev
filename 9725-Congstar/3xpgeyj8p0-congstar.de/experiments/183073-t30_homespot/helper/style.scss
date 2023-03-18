@@ -1,0 +1,17 @@
+.kam-T30-hidden {
+    display: none !important;
+}
+
+.kam-T30-table, 
+.kam-T30-table.hidden-md-up {
+    tr > th:nth-child(3),
+    tr > td:nth-child(3),
+    .col-12.col-md-6.col-lg-3:nth-child(3),
+    .row-template--1-col:nth-child(3),
+    .ce-space-4:nth-child(4),
+    .row-template--2-col:nth-child(4),
+    .ce-space-md-5:nth-child(5),
+    .ce-space-md-5:nth-child(6)  {
+        display: none !important;
+    }    
+}

@@ -1,0 +1,491 @@
+@font-face {
+font-family: 'Interstate';
+src: url("https://cdn.congstar-congo.aoe-aws.com/libraries/congstar-ui/v7.38.5/fonts/interstate-light/ed91348a-d965-4bc4-a7bc-3d12ab0f9cfb-3.woff") format("woff");
+font-weight: normal;
+font-style: normal; }
+
+@font-face {
+font-family: 'Interstate';
+src: url("https://cdn.congstar-congo.aoe-aws.com/libraries/congstar-ui/v7.38.5/fonts/interstate-bold/86bef0b5-fa75-4ca3-8394-cb7b5a474a45-3.woff") format("woff");
+font-weight: 600;
+font-style: normal; }
+
+body #inbenta-bot-sdk.inbenta .inbenta-bot {
+font-family: "Interstate", Helvetica, Arial, sans-serif;
+font-size: 14px;
+color: #5E5E5E;
+line-height: 1.5;
+z-index: 999999; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot a {
+    color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot a:active, body #inbenta-bot-sdk.inbenta .inbenta-bot a:focus {
+    color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot a:hover {
+    color: #28a9e3; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot ul, body #inbenta-bot-sdk.inbenta .inbenta-bot ol {
+    padding-left: 15px;
+    list-style: disc; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-button {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: #55bbe9;
+    color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.3, 0.01, 0.6, 0.99) 0s;
+    transition: all 0.3s cubic-bezier(0.3, 0.01, 0.6, 0.99) 0s;
+    text-transform: none; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot-button.clicked {
+    background-color: #28a9e3;
+    color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.3, 0.01, 0.6, 0.99) 0s;
+    transition: all 0.3s cubic-bezier(0.3, 0.01, 0.6, 0.99) 0s; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-button[disabled] {
+    background-color: #55bbe9;
+    color: white;
+    opacity: 0.5; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-button[disabled].clicked {
+        color: white;
+        background-color: #28a9e3;
+        opacity: 0.5;
+        font-weight: normal; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-button-secondary {
+    background-color: transparent;
+    color: #55bbe9;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-button-secondary:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot-button-secondary.clicked {
+        color: #28a9e3; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot-button-secondary:hover:not([disabled]) span:before, body #inbenta-bot-sdk.inbenta .inbenta-bot-button-secondary.clicked span:before {
+        background-color: transparent; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-input {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: white;
+    color: #5E5E5E;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: 1px solid #dadada; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__trigger {
+    background-color: white;
+    color: #55bbe9;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    margin-top: 8px;
+    cursor: pointer; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__trigger:hover {
+    background-color: white;
+    color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__trigger .trigger__action {
+    font-size: 14px; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__menu {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #e5e5e5; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__menu__item {
+    padding: 10px 12px;
+    background-color: white;
+    color: #5E5E5E;
+    font-size: 14px;
+    cursor: pointer; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__menu__item + .inbenta-bot-dropdown__menu__item {
+        border-top: 1px solid #e5e5e5; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown__menu__item:hover {
+        color: #28a9e3; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-dropdown ~ .content__status {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    top: 5px;
+    right: 0; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot__launcher {
+    background-color: #55bbe9;
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 16px;
+    z-index: 9999;
+    height: auto; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__launcher__image + .inbenta-bot__launcher__text {
+    margin-left: 10px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__launcher__text {
+    color: white;
+    font-weight: 600; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__launcher:hover {
+    background-color: #28a9e3;
+    color: white;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot__chat, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble {
+    border-radius: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__header, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__header {
+    background-color: #55bbe9;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 8px 16px;
+    position: relative; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .header__title, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .header__title {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    line-height: 1.5; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .body__wrapper, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .body__wrapper {
+    background-color: #eee;
+    padding: 16px 16px 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .alert-box__title, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .alert-box__title {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .alert-box__message, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .alert-box__message {
+    font-family: "Interstate", Helvetica, Arial, sans-serif; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message__content {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #5E5E5E;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 8px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message .extended_message_container, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message .extended_message_container {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: white;
+    border-radius: 8px 8px 8px 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message .extended_message_container .messages__message__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message .extended_message_container .messages__message__content {
+        padding: 0; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message .extended_message_container .messages__message__content .content__text, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message .extended_message_container .messages__message__content .content__text {
+        padding: 8px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--sent .messages__message__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--sent .messages__message__content {
+    background-color: #55bbe9;
+    color: white;
+    border-radius: 8px 8px 0 8px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--sent .content__text .autolink-url, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--sent .content__text .autolink-url {
+    word-break: break-all;
+    -ms-word-break: break-all; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__avatar, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__avatar {
+    background-image: url("https://static-or00.inbenta.com/60da6203ebb6537d5d18cf670ac66bddbd25ece09934ef8c8b1cad9047ff76d8/Images/img_sophie_100x100.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin: 0 8px 0 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__avatar .inbenta-bot-icon--avatar, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__avatar .inbenta-bot-icon--avatar {
+        display: none; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content {
+    background-color: white;
+    color: #5E5E5E;
+    border-radius: 8px 8px 8px 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content {
+        background-color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__phrase, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__phrase {
+        color: #A0A0A0;
+        font-weight: normal; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button + .inbenta-bot-button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button + .inbenta-bot-button {
+        margin-left: 4px; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button .inbenta-bot-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button .inbenta-bot-icon:before {
+        color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button__text, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button__text {
+        color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button:hover, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__buttons .inbenta-bot-button:hover {
+        background-color: #28a9e3; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__comment .comment__wrapper__textarea, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__comment .comment__wrapper__textarea {
+        border-radius: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        border: 1px solid #dadada; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .messages__message__content .inbenta-bot-rating__content__comment .comment__wrapper__textarea:hover, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .messages__message__content .inbenta-bot-rating__content__comment .comment__wrapper__textarea:hover {
+            border: 1px solid #dadada; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--received .content__label, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--received .content__label {
+    display: none; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .messages__message--system .messages__message__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .messages__message--system .messages__message__content {
+    background-color: white;
+    color: #5E5E5E;
+    border-radius: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__open-sidebubble__phrase, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__open-sidebubble__phrase {
+    color: #55bbe9;
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__open-sidebubble__icon, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__open-sidebubble__icon {
+    color: #55bbe9;
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__open-sidebubble:hover, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__open-sidebubble:hover {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__open-sidebubble:hover .content__open-sidebubble__phrase,
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__open-sidebubble:hover .content__open-sidebubble__icon, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__open-sidebubble:hover .content__open-sidebubble__phrase,
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__open-sidebubble:hover .content__open-sidebubble__icon {
+        color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons {
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise {
+        padding-top: 13px; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-icon--faq-icon, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-icon--faq-icon {
+        margin-right: 5px;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-left: 9px solid #55bbe9;
+        border-bottom: 6px solid transparent; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-icon--faq-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-icon--faq-icon:before {
+            display: none; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button {
+        color: #55bbe9;
+        font-size: 14px;
+        font-weight: normal;
+        background-color: transparent;
+        font-weight: 600;
+        letter-spacing: 0.3px; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button.clicked, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button.clicked {
+            background-color: transparent;
+            color: #28a9e3; }
+            body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button:hover:not([disabled]) .inbenta-bot-icon--faq-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button.clicked .inbenta-bot-icon--faq-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button:hover:not([disabled]) .inbenta-bot-icon--faq-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button.clicked .inbenta-bot-icon--faq-icon:before {
+            color: #28a9e3; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button[disabled], body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button[disabled] {
+            background-color: transparent;
+            opacity: 1; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise .inbenta-bot-button.clicked, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise .inbenta-bot-button.clicked {
+            color: #28a9e3; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--multiple-choise[disabled], body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--multiple-choise[disabled] {
+        opacity: 0.8; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--download .inbenta-bot-button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--download .inbenta-bot-button {
+        color: #55bbe9;
+        background-color: transparent; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--download .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--download .inbenta-bot-button.clicked, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--download .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--download .inbenta-bot-button.clicked {
+        background-color: transparent;
+        color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--attached .inbenta-bot-button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--attached .inbenta-bot-button {
+        color: #55bbe9;
+        background-color: transparent; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--attached .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__buttons--attached .inbenta-bot-button.clicked, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--attached .inbenta-bot-button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__buttons--attached .inbenta-bot-button.clicked {
+        background-color: transparent;
+        color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related-contents, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related-contents {
+    border-radius: 0;
+    background-color: white;
+    padding: 8px;
+    border-top: 1px dashed #D2D2D2; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related-contents .content__related__show, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related-contents .content__related__show {
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        -ms-justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        padding: 0;
+        font-size: 13px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__show, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__show {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 0;
+    color: #55bbe9;
+    font-weight: bold;
+    text-align: left; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__show:hover, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__show:hover {
+        background-color: white;
+        color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__icon--closed:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__icon--closed:before {
+    color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__icon--opened:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__icon--opened:before {
+    color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related-buttons, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related-buttons {
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__button {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    color: #55bbe9;
+    border-radius: 0;
+    padding: 4px 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__button--active, body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__button:focus, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__button--active, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__button:focus {
+        background-color: transparent;
+        color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .content__related__button:first-child, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .content__related__button:first-child {
+        margin-top: 10px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__footer, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__footer {
+    -webkit-box-shadow: 0 -1px 0 0 #B4B4B4;
+            box-shadow: 0 -1px 0 0 #B4B4B4;
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__content {
+    background-color: white;
+    color: #5E5E5E;
+    border-radius: 8px 8px 8px 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 8px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__avatar, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__avatar {
+    background-image: url("https://static-or00.inbenta.com/60da6203ebb6537d5d18cf670ac66bddbd25ece09934ef8c8b1cad9047ff76d8/Images/img_sophie_100x100.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin: 0 8px 0 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__avatar .inbenta-bot-icon, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__avatar .inbenta-bot-icon {
+        display: none; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__avatar .inbenta-bot-icon--avatar:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__avatar .inbenta-bot-icon--avatar:before {
+        color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__dot, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__dot {
+    background-color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__chat-activity .activity__text, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__chat-activity .activity__text {
+    color: #5E5E5E; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form {
+    background-color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input {
+        color: #5E5E5E;
+        font-size: 14px;
+        height: 46px;
+        border: none;
+        background-color: white;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin: 0; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input::-webkit-input-placeholder, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input::-webkit-input-placeholder {
+        color: #D4D4D4;
+        opacity: 1; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input::-moz-placeholder, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input::-moz-placeholder {
+        color: #D4D4D4;
+        opacity: 1; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input:-ms-input-placeholder, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input:-ms-input-placeholder {
+        color: #D4D4D4;
+        opacity: 1; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input:-moz-placeholder, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input:-moz-placeholder {
+        color: #D4D4D4;
+        opacity: 1; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input[disabled], body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__input:hover[disabled], body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input[disabled], body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__input:hover[disabled] {
+        border: none;
+        background-color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button {
+        background-color: #55bbe9;
+        height: 46px;
+        width: 46px;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin: 0;
+        border-radius: 0; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button .inbenta-bot-icon--send, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button .inbenta-bot-icon--send {
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-left: 12px solid white;
+        border-bottom: 7px solid transparent;
+        right: 0; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button .inbenta-bot-icon--send:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button .inbenta-bot-icon--send:before {
+            display: none; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button:hover:not([disabled]) {
+        background-color: #28a9e3;
+        color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button:hover:not([disabled]) .inbenta-bot-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button:hover:not([disabled]) .inbenta-bot-icon:before {
+            color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button.footer__form__button--attach, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button.footer__form__button--attach {
+        background-color: white; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button.footer__form__button--attach .inbenta-bot-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button.footer__form__button--attach .inbenta-bot-icon:before {
+            color: #55bbe9; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button.footer__form__button--attach:hover:not([disabled]), body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button.footer__form__button--attach:hover:not([disabled]) {
+            background-color: white; }
+            body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__button.footer__form__button--attach:hover:not([disabled]) .inbenta-bot-icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__button.footer__form__button--attach:hover:not([disabled]) .inbenta-bot-icon:before {
+            color: #28a9e3; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat .footer__form__counter-content, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .footer__form__counter-content {
+        background-color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation {
+    font-family: "Interstate", Helvetica, Arial, sans-serif;
+    border-radius: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation .confirmation-box, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation .confirmation-box {
+        border-radius: 0; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation .confirmation-box__icon:before, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation .confirmation-box__icon:before {
+        color: #55bbe9; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation .confirmation-box__title, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation .confirmation-box__title {
+        font-family: "Interstate", Helvetica, Arial, sans-serif;
+        color: #5E5E5E;
+        text-align: center;
+        font-size: 14px; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation .confirmation-box__subtitle, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation .confirmation-box__subtitle {
+        font-family: "Interstate", Helvetica, Arial, sans-serif;
+        font-size: 13px; }
+        body #inbenta-bot-sdk.inbenta .inbenta-bot__chat__confirmation .confirmation-box__buttons .inbenta-bot-button, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble__confirmation .confirmation-box__buttons .inbenta-bot-button {
+        font-family: "Interstate", Helvetica, Arial, sans-serif; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble .header__title {
+    font-size: 16px; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content {
+    background-color: #F6F6F6; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__phrase {
+    color: #5E5E5E; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__buttons .inbenta-bot-button {
+    background-color: #55bbe9; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__buttons .inbenta-bot-button + .inbenta-bot-button {
+        margin-left: 8px; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__buttons .inbenta-bot-button__text {
+        color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content .inbenta-bot-icon--rating-yes:before {
+    color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content .inbenta-bot-icon--rating-no:before {
+    color: white; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__comment .comment__phrase {
+    color: #5E5E5E;
+    margin: 0; }
+    body #inbenta-bot-sdk.inbenta .inbenta-bot-rating__content__thanks {
+    color: #5E5E5E; }
+body #inbenta-bot-sdk.inbenta .inbenta-bot .loader__load__inner {
+    stroke: #55bbe9; }
+
+@media (max-width: 768px) {
+body #inbenta-bot-sdk.inbenta .inbenta-bot__chat, body #inbenta-bot-sdk.inbenta .inbenta-bot__bubble {
+    border-radius: 0; } }
+
+/*NEW STYLES*/
+.kam-hide{
+    display: none;
+}
+.kam-list-chatbot{
+    & .item {
+        height: 50px;
+        margin: 5px 20px 0;
+    }
+}
+#etva-wrapper .etright{
+    display: none;
+}
+.etoutput.etactive{
+    display: none !important;
+}
+.inbenta-bot__launcher{
+    display: none !important;
+}
+@media (max-width: 1000px) {
+    .kam-chatbot-service{
+        margin-bottom: 10px;
+    }
+}

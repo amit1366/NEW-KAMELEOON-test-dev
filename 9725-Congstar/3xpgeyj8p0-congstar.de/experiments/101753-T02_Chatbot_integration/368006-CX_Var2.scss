@@ -1,0 +1,31 @@
+#seamly-container{
+    position: relative;
+    z-index: 9999;
+}
+/*NEW STYLES*/
+#seamly-container p,  #seamly-container .cvco-message__body, #seamly-container input{
+    font-size: 14px;
+}
+.cvco-app{
+    width: 29rem;
+}
+.kam-hide{
+    display: none;
+}
+.kam-list-chatbot{
+    & .item {
+        height: 50px;
+        margin: 5px 20px 0;
+    }
+}
+.etoutput.etactive{
+    display: none !important;
+}
+#etva-wrapper .etright{
+    display: none;
+}
+@media (max-width: 960px) {
+    .kam-chatbot-service{
+        margin-bottom: 10px;
+    }
+}

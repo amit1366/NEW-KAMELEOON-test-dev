@@ -1,0 +1,294 @@
+.kam-popup {
+    position: fixed;
+    z-index: 11250;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    overflow: auto;
+
+    &__tarif-wrapper {
+        position: relative;
+        width: 290px;
+    }
+
+    &__image {
+        position: absolute;
+        width: 100%;
+    }
+
+    &__image-link {
+        display: block;
+        width: 183px;
+        height: 230px;
+        background-image: url(https://storage.kameleoon.eu/congstar/Deal_Closer_Postpaid_V2/geschenk-background.png);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        right: -45px;
+        top: -100px;
+    }
+
+    &__main {
+        width: 290px;
+        margin: auto;
+    }
+
+    &__description {
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+
+    &__header {
+        font-family: "Skizzed", Helvetica, Arial, sans-serif;
+        line-height: normal;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+
+    &__main-title {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    &__break {
+        display: block;
+    }
+
+    &__close-btn {
+        background: none;
+        border: none;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        color: #ffffff;
+        &::before {
+            padding: 0;
+            margin: -6px;
+        }
+    }
+}
+
+.kam-tarif-info {
+    width: 100%;
+    background-color: #ffffff;
+
+    &__wrapper {
+        padding: 25px;
+    }
+
+    &__header {
+        font-family: "Interstate", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        background-color: #d95e0f;
+        padding: 20px 25px 18px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+
+    &__descrirption {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        font-family: "Interstate", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        list-style: none;
+        padding-left: 0;
+        color: black;
+
+        & li {
+            position: relative;
+            min-height: 37px;
+            padding-bottom: 7px;
+            padding-left: 35px;
+
+            &::before {
+                position: absolute;
+                margin-left: -39px;
+                font-size: 2.8rem;
+                padding-right: 10px;
+                color: #d95e0f;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        .kam-tarif-info__label {
+            cursor: auto !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+            margin-top: 20px;
+            min-height: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding: 1px 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: #000;
+        }
+
+        .kam-tarif-info__text-sale {
+            padding-left: 0px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+
+    &__price-block {
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    &__large-price {
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: bold;
+        line-height: 1;
+        color: #000;
+
+        & .price__euro {
+            padding-right: 1px;
+            font-size: 4rem;
+        }
+
+        & .price__cent {
+            position: absolute;
+            top: 3px;
+            font-size: 2rem;
+        }
+
+        & .footnote__icon {
+            position: relative;
+            top: -7px;
+            display: inline-block;
+            padding: 0 0 0 2px;
+            margin-left: -5px;
+
+            &::before {
+                font-size: 17px;
+                color: #000000;
+            }
+        }
+
+        & .price__before {
+            color: #000000;
+            white-space: nowrap;
+        }
+    }
+
+    &__crossed {
+        text-decoration: line-through;
+    }
+
+    &__button {
+        background-color: #d95e0f;
+        margin-top: 10px;
+        &:hover {
+            color: #fff !important;
+            background-color: #c94008;
+        }
+    }
+}
+
+@media (min-width: 1160px) {
+    .kam-popup {
+        &__main {
+            width: 640px;
+            margin: auto;
+        }
+
+        &__tarif-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &__image {
+            position: relative;
+            flex: 1;
+        }
+
+        &__image-link {
+            position: absolute;
+            height: 556px;
+            width: 442px;
+            top: -70px;
+            left: -25px;
+        }
+
+        &__main-title {
+            font-size: 50px;
+            line-height: normal;
+            margin-bottom: 0;
+        }
+
+        &__header {
+            margin-bottom: 48px;
+        }
+
+        &__description {
+            width: auto;
+            padding-right: 0px;
+            font-size: 2.6rem;
+            line-height: normal;
+            padding-bottom: 0;
+            &:first-child {
+                width: 100%;
+            }
+
+            &__label {
+                min-height: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+            }
+        }
+
+        &__close-btn {
+            position: relative;
+            top: 0;
+            right: -40px;
+            &::before {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .kam-tarif-info {
+        width: 325px;
+    }
+}
+
+.kam-footnote#footnote {
+    display: none;
+    z-index: 11350;
+}
+
+.kam_close {
+    cursor: pointer;
+}
+
+.kam-popup-underfooter-text {
+	position: absolute;
+    right: 0;
+    font-size: 15px;
+    bottom: -35px;
+}
+
+@media (max-width: 1160px) {
+    .kam-popup-underfooter-text {
+        bottom: -45px;
+    }
+}

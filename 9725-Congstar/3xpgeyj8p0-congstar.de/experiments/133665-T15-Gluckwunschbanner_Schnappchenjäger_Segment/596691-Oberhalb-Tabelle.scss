@@ -1,0 +1,40 @@
+.kam-label{
+    margin-top: 3rem;
+    background-color: #008B78;
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    float: left;
+    span{
+        margin-left: 1rem;
+        font-family: "Interstate",Helvetica,Arial,sans-serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    img{
+        height: 24px;
+    }
+}
+@media (max-width: 1159px) {
+    .kam-label{
+        transform: translateX(-15px);
+        padding: 8px 15px;
+    }
+    
+}
+@media (max-width: 670px) {
+    .kam-label{
+        // max-width: calc(100% + 15px);
+        img{
+            height: 22px;
+        }
+    }
+    
+}
+@media (max-width: 520px) {
+    .kam-label{
+        width: calc(100% + 30px);
+    }
+    
+}

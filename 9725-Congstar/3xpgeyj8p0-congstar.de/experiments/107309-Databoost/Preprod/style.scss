@@ -1,0 +1,329 @@
+$orange: #d95e0f;
+$mobile-width: 550px;
+
+.kam-visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.kam-CTAbutton-overlay {
+  position: absolute;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+
+  &:hover + button[data-test-action='addToCart'] {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.kam-popup {
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  color: #000000;
+
+  &__overlay {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__container {
+    padding-left: 20px;
+    padding-top: 25px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 1px;
+      left: 10px;
+      content: ' ';
+      height: 22px;
+      width: 3px;
+      background-color: #333;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    margin-left: 15px;
+    font-size: 22px;
+  }
+
+  &__main-items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+}
+
+.kam-value-proposition {
+  position: relative;
+  width: 40%;
+  border-right: 2px dotted rgb(220, 220, 220);
+  padding-bottom: 20px;
+  padding-top: 5px;
+
+  &__number {
+    font-size: 160px;
+    line-height: 100px;
+    font-weight: 700;
+    color: $orange;
+  }
+
+  &__measure {
+    position: absolute;
+    top: 63px;
+    right: 30px;
+    font-size: 43px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__index {
+    position: absolute;
+    top: 108px;
+    right: 34px;
+    font-size: 21px;
+    font-weight: 700;
+    color: $orange;
+  }
+}
+
+.kam-purchase-offer {
+  position: relative;
+  width: 60%;
+  padding: 0 25px;
+
+  .kam-price {
+    position: relative;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    &__eurs {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    &__cents {
+      font-size: 23px;
+      position: absolute;
+    }
+
+    .kam-footnote__icon {
+      position: absolute;
+      bottom: 10px;
+      left: 80px;
+    }
+  }
+
+  &__add2Cart-btn {
+    position: relative;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    background-color: $orange;
+    color: #ffffff;
+    border-radius: 3px;
+    box-shadow: none;
+    padding: 10px 0;
+    padding-left: 20%;
+    font-size: 18px;
+    margin-bottom: 15px;
+
+    &::before {
+      content: '+';
+      line-height: 45px;
+      font-size: 38px;
+      font-weight: 400;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      height: 100%;
+      width: 20%;
+      border-right: 1px dotted #ffffff;
+    }
+  }
+
+  &__cancel-offer {
+    &-btn {
+      font-weight: 700;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      font-size: 15px;
+      padding: 0;
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-text {
+      line-height: 19px;
+      margin-left: -8px;
+    }
+  }
+}
+
+.kam-popup__main-description {
+  font-size: 16px;
+  line-height: 20px;
+
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .kam-popup {
+    width: 320px;
+
+    &__container {
+      padding-left: 15px;
+      padding-top: 20px;
+      padding-right: 15px;
+      padding-bottom: 20px;
+    }
+
+    &__close-btn {
+      right: 7px;
+      top: 8px;
+
+      &:before,
+      &:after {
+        height: 20px;
+        width: 2px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    &__main-items {
+      margin-bottom: 20px;
+    }
+  }
+
+  .kam-value-proposition {
+    padding-bottom: 20px;
+    padding-top: 5px;
+
+    &__number {
+      font-size: 100px;
+      line-height: 80px;
+      font-weight: 700;
+    }
+
+    &__measure {
+      top: 55px;
+      right: 10px;
+      font-size: 30px;
+    }
+
+    &__index {
+      top: 87px;
+      right: 8px;
+      font-size: 18px;
+    }
+  }
+
+  .kam-purchase-offer {
+    padding-left: 10px;
+    padding-right: 5px;
+
+    .kam-price {
+      margin-bottom: 12px;
+
+      &__eurs {
+        font-size: 30px;
+        line-height: 35px;
+      }
+
+      &__cents {
+        font-size: 15px;
+      }
+
+      .kam-footnote__icon {
+        left: 65px;
+      }
+    }
+
+    &__add2Cart-btn {
+      padding: 10px 0;
+      padding-left: 20%;
+      font-size: 12px;
+      margin-bottom: 15px;
+
+      &::before {
+        line-height: 40px;
+        font-size: 25px;
+      }
+    }
+
+    &__cancel-offer {
+      &-btn {
+        font-size: 11px;
+        margin-left: -3px;
+      }
+    }
+  }
+
+  .kam-popup__main-description {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

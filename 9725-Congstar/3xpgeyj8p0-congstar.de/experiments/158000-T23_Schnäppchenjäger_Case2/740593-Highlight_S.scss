@@ -1,0 +1,20 @@
+@import './Highlight.scss';
+
+#c7671927 {
+    margin-top: 30px;
+
+    .KameleoonDev__showing-message {
+        top: -50px;
+    }
+
+    #c7671727 {
+        position: relative;
+
+        &:before {
+            @include before-table;
+            
+            right: -5px;
+            left: -35px;
+        }
+    }
+}

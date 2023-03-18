@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congstar Widget</title>
+
+    <link rel="stylesheet" href="./1043-user-interface-style.css">
+</head>
+
+<body style="padding: 2rem; width: 590px;">
+    <!-- Start BO Content -->
+    <div class="widget-interface">
+        <label for="tags" class="widget-interface__tiny-label">Tags</label>
+        <input type="text" id="tags" class="widget-interface__tags" templatedata="kamTag" placeholder="Example: teaser, hauptbuehne">
+        <select name="" id="select-tags" class="widget-interface__select"></select>
+        <label for="tags" class="widget-interface__tiny-label">Content-ID</label>
+        <input type="text" id="finalId" class="widget-interface__id" templatedata="kamId" readonly>
+        <label for="html-area" class="widget-interface__tiny-label">HTML-Content</label>
+        <div class="widget-interface__html">
+            <div class="widget-interface__group">
+                <textarea name="" disabled="true" id="html-area" cols="100" rows="10" class="widget-interface__html-container"></textarea>
+                <a id="previewButton" class="widget-interface__preview-button" target="_blank">Preview</a>
+            </div>
+        </div>
+        <div class="widget-interface__additional-group">
+            <div class="widget-interface__additional-field">
+                <label for="fetch" class="">Fetch too slow</label>
+                <input type="text" id="fetch" class="" placeholder="Goal ID" templatedata="fetchGoalId">
+            </div>
+            <div class="widget-interface__additional-field">
+                <label for="persoElem" class="">Click Perso Element</label>
+                <input type="text" id="persoElem" class="" placeholder="Goal ID" templatedata="clickElementGoalId">
+            </div>
+        </div>
+    </div>
+    <!-- End BO Content -->
+    <script src="./1043-user-interface-test-file.js"></script>
+</body>
+
+</html>

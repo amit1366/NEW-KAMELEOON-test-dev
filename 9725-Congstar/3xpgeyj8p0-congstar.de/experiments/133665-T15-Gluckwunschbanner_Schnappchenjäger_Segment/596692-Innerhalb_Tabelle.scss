@@ -1,0 +1,16 @@
+@import './../../helpers/t15/Innerhalb_Tabelle.scss';
+.product-price-table__row--product .cart-item{
+  padding-top: 10px;
+}
+.kam-label{
+  width: 100%;
+  margin-bottom: 30px;
+}
+@media (max-width: 350px) {
+    .kam-label .kam-wrapper {
+      padding: 5px 20px 5px 30px;
+      span {
+      font-size: 14px;
+      }
+    }
+  }

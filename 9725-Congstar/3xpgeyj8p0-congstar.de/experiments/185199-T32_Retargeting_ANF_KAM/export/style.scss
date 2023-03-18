@@ -1,0 +1,40 @@
+.kam-t32 {
+    &.list-item {
+        row-gap: 0px;
+        grid-template-rows: auto auto;
+        grid-template-columns: 32px 1fr;
+        display: grid;
+        list-style-type: none;
+        margin-left: 0px;
+    }
+
+    .checkmark {
+        color: #d95e0f;
+        grid-row: 1 / 3;
+        display: flex;
+        font-size: 1.5rem;
+    
+        svg {
+            position: relative;
+            bottom: 2px;
+        }
+    }
+
+    .footnote {
+        position: relative;
+        padding-right: 24px;
+
+        .footnote-icon-button {
+            position: absolute;
+            color: #ffffff;
+            background: none;
+            top: -0.4375rem;
+            cursor: pointer;
+
+            svg {
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+$testID: 153515;
+//pdp
+$createdAttr: "kam-created-#{$testID}";
+
+.eft-shop-plan-configurator__settings .eft-shop-plan-configurator__options.background-color--bright{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.eft-shop-plan-configurator__description .eft-shop-plan-configurator__usps .icon-list.icon-list--themed:not([#{$createdAttr}="true"]) {
+    display: none;
+}
+//cart
+.bucket__content {
+    common-product-table-option, common-product-table-campaign, common-product-table-option-header{
+        display: none;
+    }
+}

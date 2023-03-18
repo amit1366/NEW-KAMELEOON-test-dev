@@ -1,0 +1,295 @@
+.kam_hide-VATBanner {
+    display: none;
+}
+
+body.kam_VATBanner-tarifwechsel:not(.modal-open-lock) {
+    overflow-x: unset;
+    #mrc-bucket {
+         height: 100% !important;
+        .hidden-md-down, .hidden-xs-down {
+            height: 100% !important;
+            .accordion.accordion--no-line, .plan-info-bucket.background-color--dim-dark {
+                position: sticky !important;
+                top: 186px !important;
+            }
+        }
+    }
+    #mrc-bucket > div.hidden-xs-down > div {
+        height: 100%;
+    }
+    .container-fluid {
+        top: auto !important;
+        position: relative;
+    }
+}
+
+.kam_add-VATBanner.kam_VATBanner-tarifwechsel.modal-open-lock {
+    position: relative;
+    .container-fluid.wrapper {
+        top: auto !important;
+        position: relative;
+    }
+}
+
+.kam_add-VATBanner:not(.modal-open) {
+    .container-fluid, 
+    header.header {
+        top: 174px !important;
+    }
+    .header.animate-header {
+        top: 145px !important; 
+    }
+    header.header:not(.animate-header) .header-menu {
+        top: 303px !important; 
+    }
+    #header-nav__main {
+        top: 273px !important;
+    }
+    a[name="myAnchor"] {
+        position: relative;
+        top: -135px;
+    }
+}
+
+.kam_add-VATBanner.modal-open-lock {
+    position: relative;
+    .header.animate-header {
+        top: 145px !important;
+    }
+    .container-fluid,
+    header.header {
+        top: 174px !important;
+    }
+}
+
+.kam_addTop-VATBanner_mobile {
+    .kam-show-banner.container-fluid.wrapper {
+        margin-top: 0 !important;
+        header.header {
+            margin-top: 0 !important;
+        }
+        #header-nav__main {
+            margin-top: 0 !important;
+            top: 200px !important;
+        }
+        .bucket__header {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.kameleoonDev_block-top {
+    top: auto !important;
+    transition: height, transform 200ms !important;
+}
+
+
+.kam-VATBanner {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 146px;
+    background-color:#1f1f1f;
+    border-bottom: #959595 dotted 1px;
+    top: 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1440px;
+        margin: auto;
+        height: inherit;
+        padding: 0 110px;
+        &_text {
+            padding: 0 50px;
+            font-size: 1.5rem;
+            &--title {
+                font-weight: bold;
+                font-size: 2.1rem;
+            }
+        }
+        &_close {
+            cursor: pointer;
+            margin-bottom: 70px;
+            .icon--close {
+                &::before {
+                    font-size: 42px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .kam_add-VATBanner:not(.modal-open) {
+        .container-fluid.wrapper, 
+        header.header {
+            top: 139px !important;
+        }
+        #header-nav__main {
+            top: 139px !important;
+            box-sizing: border-box;
+            bottom: 0;
+            height: auto;
+        }
+        .kam-show-banner.container-fluid.wrapper #header-nav__main {
+            top: 139px !important;
+        }
+        .device-teasers-filter-facets {
+            top: 139px !important;
+        }
+        .main-nav { 
+            height: auto !important;
+        }
+        .header-nav__wrapper-list {
+            height: auto;
+            position: absolute;
+            top: 57px;
+            bottom: 0;
+            overflow: auto;
+        }
+        .header-nav__wrapper-list ul.main-nav.list-unstyled {
+            height: auto !important;
+        }
+        .filter-actions--scrolled-over {
+            top: 139px !important;
+        }
+    }
+
+    .kam_add-VATBanner.modal-open-lock {
+        .header {
+            top: 139px !important;
+        }
+        .header.animation-header {
+            top: 139px !important;
+        }
+        .container-fluid {
+            top: 139px !important;
+        }
+    }
+
+    .kam-VATBanner {
+        height: 140px;
+        &__container {
+            position: relative;
+            padding: 0;
+            &_text {
+                position: absolute;
+                bottom: 0;
+                padding: 0 16px;
+                font-size: 1.3rem;
+                right: 0;
+                left: 0;
+                margin: auto;
+                padding-bottom: 3px;
+                &--title {
+                    font-size: 1.9rem;
+                    margin-bottom: 0.1rem;
+                }
+            }
+            &_close {
+                position: absolute;
+                right: 0;
+                top: 10px;
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .kam_add-VATBanner:not(.modal-open) {
+        .container-fluid.wrapper, 
+        header.header {
+            top: 149px !important;
+        }
+        #header-nav__main {
+            top: 149px !important;
+        }
+        .device-teasers-filter-facets {
+            top: 149px !important;
+        }
+        .kam-show-banner.container-fluid.wrapper #header-nav__main {
+            top: 149px !important;
+        }        
+        .filter-actions--scrolled-over {
+            top: 149px !important;
+        } 
+    }
+    .kam-VATBanner {
+        height: 150px;
+        .kam-VATBanner__container {
+            &_text {
+                font-size: 1.3rem !important;
+                &--title {
+                    font-size: 1.8rem;
+                }
+            }
+            &_close .icon--close::before {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .kam-VATBanner .kam-VATBanner__container_text {
+        font-size: 1.2rem !important;
+        padding-bottom: 0;
+        &--title {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1160px) {
+    .kam_add-VATBanner:not(.modal-open) {
+        .container-fluid.wrapper, 
+        header.header, &.lock-position #header-nav__main, .header.animate-header {
+            top: 133px !important;
+        }
+        .header-menu, header.header:not(.animate-header) .header-menu {
+            top: 248px !important;
+        }
+        .filter-facet-panel {
+            margin-top: 25px;
+        }
+    }
+
+    .kam_add-VATBanner.modal-open-lock {
+        .header.animate-header {
+            top: 133px !important;
+        }
+        .container-fluid {
+            top: 133px !important;
+        }
+    }
+
+    .kam-VATBanner {
+        height: 135px;
+        &__container {
+            padding: 0px 60px;
+            &_text {
+                font-size: 1.3rem;
+                padding: 15px 18px 0 18px;
+                &--title {
+                    font-size: 2rem;
+                }
+                p {
+                    margin-bottom: 0.6rem;
+                }
+            }
+            &_close {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+body.kam_add-VATBanner.kam_deleteTop-VATBanner-meincongstar {
+    header.header {
+        top: 0 !important;
+    }
+}

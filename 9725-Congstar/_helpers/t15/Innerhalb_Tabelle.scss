@@ -1,0 +1,31 @@
+.product-price-table__row--product .cart-item{
+    flex-wrap: wrap;
+}
+
+.kam-label .kam-wrapper{
+    background-color: #008B78;
+    color: white;
+    padding: 0 20px 0 40px;
+    transform: translateX(-40px);
+    display: flex;
+    align-items: center;
+    height: 32px;
+    float: left;
+    i{
+        font-size: 22px;
+        font-family: Skizzed;
+        font-style: normal;
+       
+    }
+    span{
+        padding-left: 5px;
+        font-size: 16px;
+        letter-spacing: 0.001em;
+    }
+}
+@media (max-width: 1160px) {
+    .kam-label{
+        width: 100%;
+    }
+    
+}

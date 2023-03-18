@@ -1,0 +1,81 @@
+.kam-showing-message,
+.kam-showing-action {
+    position: absolute;
+    background-color: #fecb01;
+    color: #000;
+    left: 15px;
+    transform: translate(0, -50%);
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1;
+}
+#c7671687 .kam-showing-message,
+#c6858304 .kam-showing-message,
+#c6856564 .kam-showing-message {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -100%);
+}
+.device-teaser-tile .kam-showing-message {
+    left: 30px;
+}
+.kam-showing-action {
+    background-color: #000;
+    color: #fff;
+    left: 30px;
+}
+.slick-slider .plan-bucket,
+.slick-slider .device-teaser {
+    margin-top: 15px;
+}
+#c7671927 .bucket__content .col-md-9 .row > div {
+    padding: 0;
+}
+#c7671927 .bucket__content .col-md-9 .row > div table,
+#c6858444 .bucket__content .col-md-9 .row > div table,
+#c6856564 .bucket__content .col-md-9 .row > div table {
+    width: 100% !important;
+  	margin-left: unset !important;
+}
+.bucket__content {
+    padding-top: 15px;
+}
+.bucket__content .col-md-9 .row > div table.table--plan-details tr:nth-child(2) td {
+    padding-right: 0;
+}
+.bucket__content .col-md-9 .row > div table tr:not(:nth-child(2)):not(:last-child) td {
+    padding-left: 40px !important;
+}
+.bucket__content .col-md-9 .row > div table tr th {
+    padding-top: 30px;
+}
+.bucket__content .col-md-9 .row > div table tr th,
+.bucket__content .col-md-9 .row > div table tr:nth-child(2) td,
+.bucket__content .col-md-9 .row > div table tr:last-child td {
+    padding-left: 15px;
+    padding-right: 20px;
+}
+.bucket__content .col-md-9 .row > div #c7671687 table tr:nth-child(2n),
+.bucket__content .col-md-9 .row > div #c6856444 table tr:nth-child(2n),
+.bucket__content .col-md-9 .row > div #c6858304 table tr:nth-child(2n) {
+    background-color: #f6ecc3;
+}
+.bucket__content .col-md-9 .row > div #c7671687 table tr:nth-child(2n-1),
+.bucket__content .col-md-9 .row > div #c6856444 table tr:nth-child(2n-1),
+.bucket__content .col-md-9 .row > div #c6858304 table tr:nth-child(2n-1),
+.bucket__content .col-md-9 .row > div #c6856444 table tr:last-child {
+    background-color: #fff5cc;
+}
+#c7671687::after,
+#c6856444:after,
+#c6858304:after {
+  	content: "";
+  	position: absolute;
+  	width: 100%;
+  	height: 25px;
+  	background-color: #fff5cc;
+}

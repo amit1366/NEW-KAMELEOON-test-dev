@@ -1,0 +1,20 @@
+content-loader-container[container-id="6991787"] {
+  background: #000000;
+}
+
+content-loader-container[container-id="6991787"] > div.row {
+  background: #000000;
+}
+
+.accordion {
+  margin-top: 50px !important;
+}
+
+.accordion-item a {
+  word-wrap: break-word !important;
+}
+
+.accordion-item a,
+.accordion-item p {
+  color: #ffffff !important;
+}

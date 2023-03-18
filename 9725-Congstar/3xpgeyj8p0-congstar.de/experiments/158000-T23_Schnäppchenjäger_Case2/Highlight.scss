@@ -1,0 +1,236 @@
+$bg-color: #fecb01;
+
+@mixin before-table {
+    content: '';
+    z-index: 98;
+    position: absolute;
+    top: -50px;
+    bottom: -50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border-top: 30px solid #fff;
+    border-bottom: 30px solid #fff;
+    pointer-events: none;
+}
+
+@mixin sticker-size {
+    width: 140px;
+    height: 140px;
+    box-sizing: border-box;
+}
+@mixin plan {
+    @media (max-width: 767.9px) {
+        right: initial !important;
+        left: initial !important;
+        background: #fecb01;
+        width: initial !important;
+        aspect-ratio: initial;
+
+        div.KameleoonDev__message-container {
+            font-size: 12px !important;
+            position: initial;
+            padding: 0;
+        }
+
+        svg.KameleoonDev__sticker {
+            display: none;
+        }
+    }
+}
+@mixin sticker {
+    position: absolute;
+    aspect-ratio: 1;
+    background: transparent;
+
+    svg.KameleoonDev__sticker {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .KameleoonDev__message-container {
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        place-content: center;
+        padding: 50%;
+        font-size: 24px;
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: 1440px) {
+            font-size: 20px;
+        }
+        @media (max-width: 1160px) {
+            font-size: 18px;
+        }
+        @media (max-width: 950px) {
+            font-size: 15px;
+        }
+        @media (max-width: 840px) {
+            font-size: 12px;
+        }
+        @media (max-width: 767px) {
+            font-size: 20px;
+        }
+        @media (max-width: 650px) {
+            font-size: 18px;
+        }
+        @media (max-width: 480px) {
+            font-size: 15px;
+        }
+        @media (max-width: 425px) {
+            font-size: 12px;
+        }
+    }
+}
+
+.KameleoonDev__showing-message {
+    position: absolute;
+    background-color: $bg-color;
+    color: #000;
+    transform: translate(0, -50%);
+    padding: 5px 10px 7px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 99;
+    text-align: center;
+    right: 28px;
+    top: 0;
+    width: max-content;
+    line-height: initial;
+
+    &.KameleoonDev__plan {
+        @include sticker;
+        @include plan;
+        left: 73%;
+        top: 220px;
+        width: 140px;
+
+        .KameleoonDev__message-container {
+            font-size: 20px !important;
+        }
+
+        @media (max-width: 1160px) {
+            left: 550px;
+            top: 180px !important;
+        }
+
+        @media (max-width: 767.9px) {
+            top: -30px !important;
+        }
+    }
+
+    &.KameleoonDev__plan-additional {
+        @include sticker;
+        @include plan;
+        right: 39.5%;
+        width: 12.5%;
+        z-index: 0;
+
+        @media (max-width: 1279.9px) {
+            right: 25%;
+            width: 14%;
+
+            .KameleoonDev__message-container {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 810.9px) {
+            right: 11.5%;
+            width: 22%;
+
+            .KameleoonDev__message-container {
+                font-size: 24px;
+            }
+        }
+        @media (min-width: 768px) {
+            transform: matrix(1, -0.09, 0.09, 1, 0, 0) translate(0, -50%);
+        }
+        @media (max-width: 767.9px) {
+            top: 25px !important;
+        }
+    }
+
+    &.KameleoonDev__allnet {
+        right: 15px;
+
+        .KameleoonDev__showing-message__tail {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid $bg-color;
+            transform: rotate(45deg) translate(0px, -7px);
+
+            @media (min-width: 1060px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1060px) {
+            top: -20px;
+            left: 10px;
+        }
+    }
+
+    &.KameleoonDev__overview {
+        background: #fff;
+    }
+
+    &.KameleoonDev__iphonepage {
+        @include sticker;
+        top: 29.5%;
+        right: 22%;
+        width: 23.5%;
+
+        @media (max-width: 767px) {
+            top: 32%;
+            right: 18%;
+            width: 25%;
+        }
+    }
+
+    &.KameleoonDev__cart {
+        position: initial;
+        margin-top: 10px;
+    }
+}
+
+svg.KameleoonDev__sticker {
+    @include sticker-size;
+    margin: 0;
+
+    path {
+        fill: $bg-color;
+    }
+}
+
+.KameleoonDev__container {
+    @media (max-width: 767px) {
+        margin-top: 40px;
+    }
+
+    &.cui-plan-selection__radios {
+        @media (max-width: 1060px) {
+            margin-top: 40px !important;
+        }
+    }
+
+    header {
+        z-index: 100;
+    }
+
+    h1 {
+        max-width: 350px;
+    }
+}
+
+.device-teaser__header a {
+    height: 7rem;
+    padding-top: 2rem;
+}

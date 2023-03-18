@@ -1,0 +1,301 @@
+.kam-popup {
+  position: fixed;
+  z-index: 11250;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+}
+
+.kam-popup__tarif-wrapper {
+  position: relative;
+  width: 290px;
+}
+
+.kam-popup__image {
+  position: absolute;
+  width: 100%;
+}
+
+.kam-popup__image-link {
+  display: block;
+  width: 183px;
+  height: 230px;
+  background-image: url("https://storage.kameleoon.eu/congstar/Deal_Closer_Postpaid_V2/geschenk-background.png");
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  right: -45px;
+  top: -100px;
+}
+
+.kam-popup__main {
+  width: 290px;
+  margin: auto;
+}
+
+.kam-popup__description {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.kam-popup__header {
+  font-family: "Skizzed", Helvetica, Arial, sans-serif;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.kam-popup__main-title {
+  font-size: 30px;
+  line-height: normal;
+}
+
+.kam-popup__break {
+  display: block;
+}
+
+.kam-popup__close-btn {
+  background: none;
+  border: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}
+
+.kam-popup__close-btn::before {
+  padding: 0;
+  margin: -6px;
+}
+
+.kam-tarif-info {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.kam-tarif-info__wrapper {
+  padding: 25px;
+}
+
+.kam-tarif-info__header {
+  font-family: "Interstate", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  background-color: #d95e0f;
+  padding: 20px 25px 18px;
+}
+
+.kam-tarif-info__title {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.kam-tarif-info__descrirption {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-family: "Interstate", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  list-style: none;
+  padding-left: 0;
+  color: black;
+}
+
+.kam-tarif-info__descrirption li {
+  position: relative;
+  min-height: 37px;
+  padding-bottom: 7px;
+  padding-left: 35px;
+}
+
+.kam-tarif-info__descrirption li::before {
+  position: absolute;
+  margin-left: -39px;
+  font-size: 2.8rem;
+  padding-right: 10px;
+  color: #d95e0f;
+}
+
+.kam-tarif-info__descrirption li:last-child {
+  padding-bottom: 0;
+}
+
+.kam-tarif-info__descrirption .kam-tarif-info__label {
+  cursor: auto !important;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  margin-top: 20px;
+  min-height: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding: 1px 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #000;
+}
+
+.kam-tarif-info__descrirption .kam-tarif-info__text-sale {
+  padding-left: 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.kam-tarif-info__price-block {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.kam-tarif-info__large-price {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+}
+
+.kam-tarif-info__large-price .price__euro {
+  padding-right: 1px;
+  font-size: 4rem;
+}
+
+.kam-tarif-info__large-price .price__cent {
+  position: absolute;
+  top: 3px;
+  font-size: 2rem;
+}
+
+.kam-tarif-info__large-price .footnote__icon {
+  position: relative;
+  top: -7px;
+  display: inline-block;
+  padding: 0 0 0 2px;
+  margin-left: -5px;
+}
+
+.kam-tarif-info__large-price .footnote__icon::before {
+  font-size: 17px;
+  color: #000000;
+}
+
+.kam-tarif-info__large-price .price__before {
+  color: #000000;
+  white-space: nowrap;
+}
+
+.kam-tarif-info__crossed {
+  text-decoration: line-through;
+}
+
+.kam-tarif-info__button {
+  background-color: #d95e0f;
+  margin-top: 10px;
+}
+
+.kam-tarif-info__button:hover {
+  color: #fff !important;
+  background-color: #c94008;
+}
+
+@media (min-width: 1160px) {
+  .kam-popup__main {
+    width: 640px;
+    margin: auto;
+  }
+
+  .kam-popup__tarif-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .kam-popup__image {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .kam-popup__image-link {
+    position: absolute;
+    height: 556px;
+    width: 442px;
+    top: -70px;
+    left: -25px;
+  }
+
+  .kam-popup__main-title {
+    font-size: 50px;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+
+  .kam-popup__header {
+    margin-bottom: 48px;
+  }
+
+  .kam-popup__description {
+    width: auto;
+    padding-right: 0px;
+    font-size: 2.6rem;
+    line-height: normal;
+    padding-bottom: 0;
+  }
+
+  .kam-popup__description:first-child {
+    width: 100%;
+  }
+
+  .kam-popup__description__label {
+    min-height: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .kam-popup__close-btn {
+    position: relative;
+    top: 0;
+    right: -40px;
+  }
+
+  .kam-popup__close-btn::before {
+    font-size: 4rem;
+  }
+
+  .kam-tarif-info {
+    width: 325px;
+  }
+}
+
+.kam-footnote#footnote {
+  display: none;
+  z-index: 11350;
+}
+
+.kam_close {
+  cursor: pointer;
+}

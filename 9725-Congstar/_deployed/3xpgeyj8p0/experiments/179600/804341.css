@@ -1,0 +1,66 @@
+.kam-T15-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  padding: 11px 13px;
+  gap: 10px;
+}
+
+.kam-T15-container .kam-content .kam-headline {
+  color: #008b74;
+  font-family: 'Interstate';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.kam-T15-container .kam-content .kam-text {
+  font-family: 'Interstate';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 1160px) {
+  .kam-T15-container .kam-content .kam-headline {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .kam-T15-container .kam-content .kam-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.kam-T15-container {
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+
+.kam-T15-container::after {
+  content: ' ';
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -9.5px;
+  left: 50%;
+  right: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.kam-T15-container + .bucket {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.kam-T15-container + .bucket > .bucket__header {
+  border-radius: 0;
+}
