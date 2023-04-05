@@ -13,9 +13,10 @@ export const selectors = {
     kamOffCanvasCartButton: '#kam-add2cart-off_canvas-footer__cart',
     kamOffCanvasShopButton: '#kam-add2cart-off_canvas-footer__shop',
     cartElementProduct: '.minicart-item ',
-    cratElementWrapper: '#sidebar-content-wrapper',
+    cratElementWrapper: '#minicart-cart-prices-wrapper',
     cartProductName: '.minicard-tile__data a',
     cartProductColor: '.minicart-item-product-color',
     cartproductSize: '.minicart-item-product-settings',
     cartproductPrice: '.minicart-total-value',
+    cartImageProduct:'.cart-tile-image-wrapper > a > img'
 };

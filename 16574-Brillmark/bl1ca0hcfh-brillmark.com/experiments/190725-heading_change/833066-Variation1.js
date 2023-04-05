@@ -1,5 +1,4 @@
 import { selectors } from './selectors';
-
 import { insertOffCanvas, listenAllRequests } from './functions';
 
 const getOffCanvasLayout = () => `
@@ -21,12 +20,12 @@ Kameleoon.API.Utils.querySelectorAll('button#quicknavigation-cart')[0].addEventL
 
         listenAllRequests(getItemLayout);
         // showOffCanvas()
-    }, 2000)
+    }, 10000)
 })
 
 // wait for element cart page
-Kameleoon.API.Core.runWhenElementPresent(".cart-total-bottom-holder", () => {
+Kameleoon.API.Core.runWhenElementPresent(".img-fluid.cart-product-image", () => {
     insertOffCanvas(getOffCanvasLayout);
 
     listenAllRequests(getItemLayout);
-}, 2000)
+}, 15000)

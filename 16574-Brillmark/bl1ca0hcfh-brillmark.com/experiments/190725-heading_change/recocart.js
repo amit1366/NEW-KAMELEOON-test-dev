@@ -1,5 +1,5 @@
 /* eslint-disable */
-export const getReco = (productId) => {
+export const getRecoCart = (productId) => {
     require(['ui/base', 'nm/appbase', 'nm/checkout'], function () {
         require([
             'dojo/query',
@@ -14,7 +14,7 @@ export const getReco = (productId) => {
                 new RecommendationComponent({
                     element: elmt,
                     recommendationService: recoService,
-                    isFlyoutWidget: true,
+                    isFlyoutWidget: false,
                     isTeaserWidget: false,
                     fallbackData: null,
                     options: {
