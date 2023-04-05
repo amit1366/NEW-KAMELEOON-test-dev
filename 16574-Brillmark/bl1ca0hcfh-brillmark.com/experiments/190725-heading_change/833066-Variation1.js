@@ -1,6 +1,6 @@
 import { selectors } from './selectors';
 
-import { insertOffCanvas, listenAllRequests, showOffCanvas } from './functions';
+import { insertOffCanvas, listenAllRequests } from './functions';
 
 const getOffCanvasLayout = () => `
     <div class="bm-cartslider" id="${selectors.kamOffCanvas.slice(1)}">
