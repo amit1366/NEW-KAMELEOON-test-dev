@@ -14,11 +14,11 @@ export const getReco = (productId) => {
                 new RecommendationComponent({
                     element: elmt,
                     recommendationService: recoService,
-                    isFlyoutWidget: false,
+                    isFlyoutWidget: true,
                     isTeaserWidget: false,
                     fallbackData: null,
                     options: {
-                        id: '6',
+                        id: '3',
                         emcs1: 'Econda Cross Sell Add2Cart Layer',
                         emcs2: `${productId}`,
                         context: {
