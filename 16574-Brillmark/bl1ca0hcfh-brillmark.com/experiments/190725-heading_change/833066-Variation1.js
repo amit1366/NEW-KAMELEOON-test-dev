@@ -2,7 +2,6 @@ import { selectors } from './selectors';
 
 import { insertOffCanvas, listenAllRequests, showOffCanvas } from './functions';
 
-console.log(selectors.kamOffCanvas.slice(1));
 const getOffCanvasLayout = () => `
     <div class="bm-cartslider" id="${selectors.kamOffCanvas.slice(1)}">
     </div>
@@ -13,11 +12,9 @@ const getItemLayout = () => `
     </div>
 `
     ;
-
 // for product pages 
 Kameleoon.API.Utils.querySelectorAll('button#quicknavigation-cart')[0].addEventListener('click', function () {
     console.log('click cart');
-
     Kameleoon.API.Core.runWhenElementPresent("#sidebar-content-wrapper", () => {
 
         insertOffCanvas(getOffCanvasLayout);

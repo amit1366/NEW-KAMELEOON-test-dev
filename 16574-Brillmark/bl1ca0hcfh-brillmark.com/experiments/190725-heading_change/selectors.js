@@ -15,5 +15,7 @@ export const selectors = {
     cartElementProduct: '.minicart-item ',
     cratElementWrapper: '#sidebar-content-wrapper',
     cartProductName: '.minicard-tile__data a',
-    cartProductColor: '.minicard-tile__data a',
+    cartProductColor: '.minicart-item-product-color',
+    cartproductSize: '.minicart-item-product-settings',
+    cartproductPrice: '.minicart-total-value',
 };
