@@ -18,5 +18,17 @@ export const selectors = {
     cartProductColor: '.minicart-item-product-color',
     cartproductSize: '.minicart-item-product-settings',
     cartproductPrice: '.minicart-total-value',
-    cartImageProduct: '.cart-tile-image-wrapper > a > img'
+    cartImageProduct: '.cart-tile-image-wrapper > a > img',
+    cartProductslideName: '.cart-tile-information-wrapper > a.product-name',
+    cartProductslideColor: '.cart-tile-information-wrapper .cart-tile-product-color',
+    cartProductslideSize: '.form-select-wrapper .form-select[id*="select-size-product"]',
+    cartProductslidePrise: '.product-price-inner-holder .product-price',
+    cartProductslideImage: '.img-fluid.cart-product-image',
+    cartProductHolder: '.cart-total-bottom-holder',
+    goalCheckoutBtn: '#checkout-data-guest-btn-back',
+    goalCheckoutPaymentbtn: '#checkout-data-guest-btn-submit',
+    goalSliderProdcut: '.bm-cartslider a.product-list-product-name',
+    goalRemoveBtn: 'button.minicart-item-product-action-remove',
+    goalCartPageRemoveBtn: 'button.cart-delete-product',
+    returnElement: '#sidebar-wrapper .bm-cartslider'
 };

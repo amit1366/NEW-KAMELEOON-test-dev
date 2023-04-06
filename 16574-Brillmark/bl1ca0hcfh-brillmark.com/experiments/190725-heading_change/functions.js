@@ -25,16 +25,16 @@ export const showOffCanvas = (offCanvas, type, getItemLayout) => {
             .replace('.png', '')
             .replace('.jpg', '');
     }
-    if (type === 0 && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0]) {
-        console.log('this cart');
-        productName = Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0].innerText;
-        console.log(productName);
-        productColor = Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper .cart-tile-product-color')[0].innerText
-        productSize = Kameleoon.API.Utils.querySelectorAll('.form-select-wrapper .form-select[id*="select-size-product"]')[0]
+    if (type === 0 && document.querySelector(selectors.cartProductslideName)) {
+
+        // document.querySelector(selectors.cartProductslideName)
+        productName = document.querySelector(selectors.cartProductslideName).innerText;
+        productColor = document.querySelector(selectors.cartProductslideColor).innerText
+        productSize = document.querySelector(selectors.cartProductslideSize)
         productSize = productSize.options[productSize.selectedIndex].text;
-        productPrice = Kameleoon.API.Utils.querySelectorAll('.product-price-inner-holder .product-price')[0].innerText
+        productPrice = document.querySelector(selectors.cartProductslidePrise).innerText
         productQuantity = 20;
-        productImage = document.querySelector('.img-fluid.cart-product-image') && document.querySelector('.img-fluid.cart-product-image').getAttribute('data-srcset').match(/[\w.-\d/]+ 2x/g)[0].replace(' 2x', '');
+        productImage = document.querySelector(selectors.cartProductslideImage).getAttribute('data-srcset').match(/[\w.-\d/]+ 2x/g)[0].replace(' 2x', '');
         console.log(productImage);
         productcartId = productImage.match(/\d+.[(png)(jpg)]+/g)[0]
             .replace('.png', '')
@@ -53,18 +53,29 @@ export const showOffCanvas = (offCanvas, type, getItemLayout) => {
     if (document.querySelector(selectors.cartProductName)) {
         getReco(productId);
     }
-    if (type === 0 && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0]) {
+    if (document.querySelector(selectors.cartProductslideName)) {
         getRecoCart(productcartId);
     }
 };
 
 export const insertOffCanvas = (getOffCanvasLayout) => {
-    if (document.querySelector(selectors.cratElementWrapper)) {
-        document.querySelector(selectors.cratElementWrapper).insertAdjacentHTML(
-            'afterBegin',
-            getOffCanvasLayout()
-        );
+
+    if (window.innerWidth > 739.98) {
+        if (document.querySelector(selectors.cratElementWrapper)) {
+            document.querySelector(selectors.cratElementWrapper).insertAdjacentHTML(
+                'afterBegin',
+                getOffCanvasLayout()
+            );
+        }
+    } else if (window.innerWidth <= 739.98) {
+        if (document.querySelector('#minicart-cart-prices-wrapper')) {
+            document.querySelector('#panel-cart-wrapper #minicart-cart-prices-wrapper').insertAdjacentHTML(
+                'afterBegin',
+                getOffCanvasLayout()
+            );
+        }
     }
+
 };
 
 
@@ -74,15 +85,12 @@ export function listenAllRequests(getItemLayout) {
     if (offCanvas && document.querySelector(selectors.cartProductName)) {
         showOffCanvas(offCanvas, 1, getItemLayout);
     }
-    // if (offCanvas && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')) {
-    //     showOffCanvas(offCanvas, 0, getItemLayout);
-    // }
 }
 
 // cat page slider 
 export const insertOffCanvasCart = (getOffCanvasLayout) => {
-    if (document.querySelector('.img-fluid.cart-product-image')) {
-        document.querySelector('.cart-total-bottom-holder').insertAdjacentHTML(
+    if (document.querySelector(selectors.cartProductslideImage)) {//cartProductHolder
+        document.querySelector(selectors.cartProductHolder).insertAdjacentHTML(
             'afterend',
             getOffCanvasLayout()
         );
@@ -91,10 +99,7 @@ export const insertOffCanvasCart = (getOffCanvasLayout) => {
 
 export function listenAllRequestsCart(getItemLayout) {
     const offCanvas = document.querySelector(selectors.kamOffCanvas);
-    // if (offCanvas && document.querySelector(selectors.cartProductName)) {
-    //     showOffCanvas(offCanvas, 1, getItemLayout);
-    // }
-    if (offCanvas && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')) {
+    if (offCanvas && document.querySelector(selectors.cartProductslideName)) {
         showOffCanvas(offCanvas, 0, getItemLayout);
     }
 }

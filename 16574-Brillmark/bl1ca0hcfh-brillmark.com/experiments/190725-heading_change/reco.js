@@ -14,7 +14,7 @@ export const getReco = (productId) => {
                 new RecommendationComponent({
                     element: elmt,
                     recommendationService: recoService,
-                    isFlyoutWidget: false,
+                    isFlyoutWidget: true,
                     isTeaserWidget: false,
                     fallbackData: null,
                     options: {
