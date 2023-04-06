@@ -1,6 +1,6 @@
 import { selectors } from './selectors';
-import { getReco } from './reco';
-import { getRecoCart } from './recocart';
+
+import { getReco, getRecoCart } from './reco';
 
 // const offCanvas = document.querySelector(selectors.kamOffCanvas);
 export const showOffCanvas = (offCanvas, type, getItemLayout) => {
@@ -11,23 +11,21 @@ export const showOffCanvas = (offCanvas, type, getItemLayout) => {
     let productPrice = '';
     let productImage = '';
     let productId = '';
+    let productcartId = '';
 
     if (type === 1 && document.querySelector(selectors.cartProductName)) {
-        console.log(selectors.cartProductName);
-        // console.log('hii this is cart');
+        console.log('hii this is cart');
         productName = document.querySelector(selectors.cartProductName).innerText;
-        console.log(productName);
         productColor = document.querySelector(selectors.cartProductColor).innerText
         productSize = document.querySelector(selectors.cartproductSize).innerText
         productPrice = document.querySelector(selectors.cartproductPrice).innerText
-        productQuantity = 50;
+        productQuantity = 20;
         productImage = document.querySelector('.minicard-tile__image .minicart-item-product-image').getAttribute('srcset').match(/[\w.-\d/]+ 2x/g)[0].replace(' 2x', '');
         productId = productImage.match(/\d+.[(png)(jpg)]+/g)[0]
             .replace('.png', '')
             .replace('.jpg', '');
-
     }
-    else if (type === 0) {
+    if (type === 0 && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0]) {
         console.log('this cart');
         productName = Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0].innerText;
         console.log(productName);
@@ -38,7 +36,7 @@ export const showOffCanvas = (offCanvas, type, getItemLayout) => {
         productQuantity = 20;
         productImage = document.querySelector('.img-fluid.cart-product-image') && document.querySelector('.img-fluid.cart-product-image').getAttribute('data-srcset').match(/[\w.-\d/]+ 2x/g)[0].replace(' 2x', '');
         console.log(productImage);
-        productId = productImage.match(/\d+.[(png)(jpg)]+/g)[0]
+        productcartId = productImage.match(/\d+.[(png)(jpg)]+/g)[0]
             .replace('.png', '')
             .replace('.jpg', '');
     }
@@ -51,37 +49,52 @@ export const showOffCanvas = (offCanvas, type, getItemLayout) => {
         productQuantity,
         `${Math.round(productPrice * 100) / 100} €`
     ));
+
     if (document.querySelector(selectors.cartProductName)) {
-        console.log(productId);
         getReco(productId);
-    } else {
-        console.log(productId);
-        getRecoCart(productId)
+    }
+    if (type === 0 && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')[0]) {
+        getRecoCart(productcartId);
     }
 };
 
 export const insertOffCanvas = (getOffCanvasLayout) => {
     if (document.querySelector(selectors.cratElementWrapper)) {
         document.querySelector(selectors.cratElementWrapper).insertAdjacentHTML(
-            'beforeend',
-            getOffCanvasLayout()
-        );
-    }
-    if (document.querySelector('.cart-list-wrapper .cart-total-tile-wrapper')) {
-        document.querySelector('.cart-list-wrapper .cart-total-tile-wrapper').insertAdjacentHTML(
-            'afterend',
+            'afterBegin',
             getOffCanvasLayout()
         );
     }
 };
 
+
+
 export function listenAllRequests(getItemLayout) {
     const offCanvas = document.querySelector(selectors.kamOffCanvas);
-    const cartSlider = document.querySelector('.img-fluid.cart-product-image')
-    if (offCanvas) {
+    if (offCanvas && document.querySelector(selectors.cartProductName)) {
         showOffCanvas(offCanvas, 1, getItemLayout);
     }
-    if (cartSlider) {
+    // if (offCanvas && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')) {
+    //     showOffCanvas(offCanvas, 0, getItemLayout);
+    // }
+}
+
+// cat page slider 
+export const insertOffCanvasCart = (getOffCanvasLayout) => {
+    if (document.querySelector('.img-fluid.cart-product-image')) {
+        document.querySelector('.cart-total-bottom-holder').insertAdjacentHTML(
+            'afterend',
+            getOffCanvasLayout()
+        );
+    }
+}
+
+export function listenAllRequestsCart(getItemLayout) {
+    const offCanvas = document.querySelector(selectors.kamOffCanvas);
+    // if (offCanvas && document.querySelector(selectors.cartProductName)) {
+    //     showOffCanvas(offCanvas, 1, getItemLayout);
+    // }
+    if (offCanvas && Kameleoon.API.Utils.querySelectorAll('.cart-tile-information-wrapper > a.product-name')) {
         showOffCanvas(offCanvas, 0, getItemLayout);
     }
 }

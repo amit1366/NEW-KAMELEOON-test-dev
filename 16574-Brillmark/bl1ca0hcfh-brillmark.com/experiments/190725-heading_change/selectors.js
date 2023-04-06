@@ -18,5 +18,5 @@ export const selectors = {
     cartProductColor: '.minicart-item-product-color',
     cartproductSize: '.minicart-item-product-settings',
     cartproductPrice: '.minicart-total-value',
-    cartImageProduct:'.cart-tile-image-wrapper > a > img'
+    cartImageProduct: '.cart-tile-image-wrapper > a > img'
 };

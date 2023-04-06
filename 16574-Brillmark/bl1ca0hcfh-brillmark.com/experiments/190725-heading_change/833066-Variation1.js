@@ -1,5 +1,7 @@
 import { selectors } from './selectors';
-import { insertOffCanvas, listenAllRequests } from './functions';
+
+import { insertOffCanvas, listenAllRequests, insertOffCanvasCart, listenAllRequestsCart } from './functions';
+
 
 const getOffCanvasLayout = () => `
     <div class="bm-cartslider" id="${selectors.kamOffCanvas.slice(1)}">
@@ -15,17 +17,16 @@ const getItemLayout = () => `
 Kameleoon.API.Utils.querySelectorAll('button#quicknavigation-cart')[0].addEventListener('click', function () {
     console.log('click cart');
     Kameleoon.API.Core.runWhenElementPresent("#sidebar-content-wrapper", () => {
-
         insertOffCanvas(getOffCanvasLayout);
 
         listenAllRequests(getItemLayout);
         // showOffCanvas()
-    }, 10000)
+    }, 2000)
 })
 
 // wait for element cart page
 Kameleoon.API.Core.runWhenElementPresent(".img-fluid.cart-product-image", () => {
-    insertOffCanvas(getOffCanvasLayout);
+    insertOffCanvasCart(getOffCanvasLayout);
 
-    listenAllRequests(getItemLayout);
+    listenAllRequestsCart(getItemLayout);
 }, 15000)
