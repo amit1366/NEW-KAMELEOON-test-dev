@@ -1,39 +1,83 @@
-$color_1: #fff;
-$background-color_1: #d95e0f;
-
-html {
-    body.bm-Congstar-T35 {
-        .bm-Congstar-T35-idnow {
-            order: 2;
-
-            .bucket__promotion {
-                display: none;
-            }
+html body .bm-wrapper .bm-inner .bm_accordion {
+    padding: 0;
+    margin: 0 0 0.5em;
+    background: #eee;
+    padding-left: 20px;
+    margin-bottom: 23px;
+    li{
+        margin: 0;
+        border-top-width: 2px;
+        max-width: none;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.4375;
+        color: #333;
+        list-style: none;
+        border-top: 1px solid #fff;
+        border-top-width: 2px;
+        &:first-of-type{
+            border: 0;
         }
-
-        .bm-Congstar-T35-KlarnaIdent {
-            order: 3;
-        }
-
-        .bm-Congstar-T35-DHLIdentCheck {
-            order: 1;
-
-            .bm-t35-recomandedBadge {
-                content: "Unsere Empfehlung";
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                padding: 1px 6px;
-                font-size: 1rem;
-                font-weight: 700;
-                color: $color_1;
-                background-color: $background-color_1;
-                position: absolute;
-                top: -10px;
-                left: 15px;
+        .bm_accordion_item{
+            position: relative;
+            padding: 12px 40px 12px 20px;
+            border: 0;
+            margin: 0;
+            color: #9b004b;
+            font-size: 1em;
+            line-height: 1.2;
+            font-weight: 600;
+            background: 0 0;
+            cursor: pointer;
+            border-radius: 3px;
+            &:before{
                 display: inline-block;
-                max-width: calc(100% - 30px);
+                font: normal normal normal 14px/1 FontAwesome;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\f107";
+                font-size: 2.4rem;
+                color: #9b004b;
+                position: absolute;
+                right: 24px;
+            }
+            p{
+                font-size: 1.6rem;
+                line-height: 1.4375;
+                color: #333;
+                margin-bottom: 0;
+                font-weight: 600;
+                max-width: none;
             }
         }
+        .bm_accordion_item.active{
+            border-radius: 0;
+            &:before{
+                content: "\f106";
+            }
+        }
+        .bm_accordion_content{
+            padding: 0 40px 18px 20px;
+            border: 0;
+            border-radius: 0;
+            background: 0 0;
+            display: none;
+            p{
+                font-size: .92857142857em;
+                max-width: none;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                a{
+                    position: relative;
+                    font-weight: 600;
+                    font-size: 1.3em;
+                    text-decoration: none;
+                    color: #9b004b;
+                }
+            }
+        }
+
     }
 }
