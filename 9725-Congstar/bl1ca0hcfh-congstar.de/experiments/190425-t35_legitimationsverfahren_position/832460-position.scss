@@ -3,6 +3,7 @@ html body .bm-wrapper .bm-inner .bm_accordion {
     margin: 0 0 0.5em;
     background: #eee;    
     margin-bottom: 23px;
+    text-align: left;
     li{
         margin: 0;
         border-top-width: 2px;
@@ -65,9 +66,8 @@ html body .bm-wrapper .bm-inner .bm_accordion {
             border-radius: 0;
             background: 0 0;
             overflow: hidden;
-            transition: all 0.5s ease-out;
+            transition: all 0.5s ease-in-out;
             max-height: 0;           
-          
          
             p{
                 font-size: .92857142857em;
@@ -88,9 +88,9 @@ html body .bm-wrapper .bm-inner .bm_accordion {
             }
         }
        .bm_accordion_item.bm-accordianactive + .bm_accordion_content{
-         max-height:600px;
-         padding-bottom: 18px;
-         transition: all 0.5s ease-out;
+         max-height:95px;
+         padding-bottom: 28px;
+        //  transition: all 0.3s ease-in;
         
      
        }
