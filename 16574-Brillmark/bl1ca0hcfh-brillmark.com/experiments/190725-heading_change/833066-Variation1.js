@@ -1,6 +1,7 @@
 import { selectors } from './selectors';
 
-import { insertOffCanvas, listenAllRequests, showOffCanvas } from './functions';
+import { insertOffCanvas, listenAllRequests, insertOffCanvasCart, listenAllRequestsCart } from './functions';
+
 
 const getOffCanvasLayout = () => `
     <div class="bm-cartslider" id="${selectors.kamOffCanvas.slice(1)}">
@@ -12,21 +13,24 @@ const getItemLayout = () => `
     </div>
 `
     ;
-// for product pages 
+// for product pages
+//    if (window.innerWidth > 739.98) {
+        
+//     } else if (window.innerWidth <= 739.98) {
+        
+//     } 
 Kameleoon.API.Utils.querySelectorAll('button#quicknavigation-cart')[0].addEventListener('click', function () {
     console.log('click cart');
-    Kameleoon.API.Core.runWhenElementPresent("#sidebar-content-wrapper", () => {
-
+    Kameleoon.API.Core.runWhenElementPresent("#sidebar-content-wrapper, #minicart-cart-prices-wrapper", () => {
         insertOffCanvas(getOffCanvasLayout);
-
         listenAllRequests(getItemLayout);
-        // showOffCanvas()
-    }, 2000)
-})
+    }, 100)
+});
+
 
 // wait for element cart page
-Kameleoon.API.Core.runWhenElementPresent(".cart-total-bottom-holder", () => {
-    insertOffCanvas(getOffCanvasLayout);
+Kameleoon.API.Core.runWhenElementPresent(".img-fluid.cart-product-image", () => {
+    insertOffCanvasCart(getOffCanvasLayout);
 
-    listenAllRequests(getItemLayout);
-}, 2000)
+    listenAllRequestsCart(getItemLayout);
+}, 15000)
