@@ -17,14 +17,11 @@ function init() {
 
 
 
-    // click in register btn
+    // click in register btn show popup
     Kameleoon.API.Utils.querySelectorAll('button#open-registration-form')[0].addEventListener('click', function () {
-        console.log('click');
-
         let input = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
         // console.log(input);
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        console.log(input.match(validRegex) && input != '');
         if (input.match(validRegex) && input != '') {
             Kameleoon.API.Utils.querySelectorAll('body')[0].classList.add('popup-active')
             this.closest('.bm-content-right-previous').classList.add('d-none')
@@ -32,7 +29,7 @@ function init() {
 
             // document.querySelector(selectors.registerBtn).click()
         } else {
-            Kameleoon.API.Utils.querySelectorAll('.bm-error')[0].classList.add('show-error')
+            Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].classList.add('show-error')
         }
 
 
@@ -50,53 +47,61 @@ function init() {
         console.log(forminput);
         console.log(button);
         button.addEventListener('mousedown', function (e) {
+            console.log('btn-click');
 
-            setTimeout(function () {
-                iframe = document.querySelector('.bm-iframe iframe');
-                forminput = iframe.contentWindow.document.querySelector('form.was-validated');
-                // setTimeout(function () {
-                formnfields = iframe.contentWindow.document.querySelector('.form-control.is-invalid')
-                console.log(iframe, forminput, formnfields);
-                console.log(!forminput);
-                if (!forminput) {
-                    console.log('close complete');
-                    window.location.href = 'https://www.seidensticker.com/de/de/account/login'
-                } else {
-                    console.log('close incomplete');
-                }
-                // }, 2000)
+            //js ajex complete
+            const send = XMLHttpRequest.prototype.send;
+            XMLHttpRequest.prototype.send = function () {
+                console.log('click');
+                this.addEventListener('load', function () {
+                    console.log((this.status === 302 || this.status === 200) && this.responseURL.indexOf('/account') > -1);
+                    if ((this.status === 302 || this.status === 200) && this.responseURL.indexOf('/account/login') > -1) {
+
+                        // Perform the redirect here
+                        window.location.href = 'https://www.seidensticker.com/de/de/damen/topseller';
+                    }
+                    // add your global handler here
+                });
+                return send.apply(this, arguments);
+            };
+
+            // setTimeout(function () {
+            //     iframe = document.querySelector('.bm-iframe iframe');
+            //     forminput = iframe.contentWindow.document.querySelector('form.was-validated');
+            //     // setTimeout(function () {
+            //     formnfields = iframe.contentWindow.document.querySelector('.form-control.is-invalid')
+            //     console.log(iframe, forminput, formnfields);
+            //     console.log(!forminput);
+            //     if (!forminput) {
+            //         console.log('close complete');
+            //         window.location.href = 'https://www.seidensticker.com/de/de/account/login'
+            //     } else {
+            //         console.log('close incomplete');
+            //     }
+            //     // }, 2000)
 
 
-            }, 100)
+            // }, 100)
             // window.location.href = "google.com"
         })
-        // }, 500);
-        // }, 10000)
+
 
     })
 
+    // remove popup
+    Kameleoon.API.Utils.querySelectorAll('.bm-close')[0].addEventListener('click', function () {
+        Kameleoon.API.Utils.querySelectorAll('body')[0].classList.remove('popup-active')
+    })
 
-    //#account_register_submit
-    //js ajex complete
-    // const send = XMLHttpRequest.prototype.send;
-
-    // XMLHttpRequest.prototype.send = function () {
-    //     this.addEventListener('load', function () {
-    //         console.log((this.status === 302 || this.status === 200) && this.responseURL.indexOf('/account') > -1, 'complete');
-    //         if ((this.status === 302 || this.status === 200) && this.responseURL.indexOf('/account') > -1) {
-
-    //             // Perform the redirect here
-    //             window.location.href = 'https://www.seidensticker.com/de/de/account';
-    //         }
-    //         // add your global handler here
-    //     });
-    //     return send.apply(this, arguments);
-    // };
-
+    //bm-email-input
+    Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].addEventListener('mousedown', function () {
+        console.log('click');
+        Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].classList.toggle('active')
+    })
 
 
 
 }
-Kameleoon.API.Core.runWhenElementPresent(".fullscreen-banner.container-fluid", () => {
+Kameleoon.API.Core.runWhenElementPresent('header a[href*="login"]', () => {
     init();
 }, 500);
