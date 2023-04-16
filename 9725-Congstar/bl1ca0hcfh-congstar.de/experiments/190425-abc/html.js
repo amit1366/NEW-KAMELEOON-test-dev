@@ -2,7 +2,7 @@
 
 // energie and bonus 
 export const bmstring = `
-<div id="bm-popup-overlay" class="bm-overlay">
+<div id="bm-popup-overlay" class="bm-overlay"></div>
    <div class="bm-popup">
      <a class="bm-close" >×</a>
      <div class="bm-content">
@@ -40,4 +40,12 @@ export const bmstring = `
        </div>
      </div>
    </div>
- </div>`
+`
+
+export const animatehtml = `
+     <div class="bm-row">
+          <div class="cell">
+            <div class="circle bounce">1</div>
+          </div>
+     </div>
+ `

@@ -1,5 +1,6 @@
 html {
-    body {
+    body.bm-popup-active {
+        overflow: hidden;
         .bm-overlay {
             position: fixed;
             top: 0;
@@ -9,10 +10,9 @@ html {
             background: rgba(0, 0, 0, 0.7);
             overflow-y: auto;
             overflow-x: hidden;
-            z-index: 999999;
+            z-index: 999;
+            display: block !important;
         }
-
-
         .bm-popup {
             padding: 0px;
             background: #fff;
@@ -23,6 +23,8 @@ html {
             left: 50%;
            top: 50%;
           transform: translate(-50%, -50%);
+          z-index: 999;
+          display: block;
         }
         .popup-active .bm-popup {
             padding: 0;
@@ -66,8 +68,8 @@ html {
         }
         .bm-content-right {
             padding: 40px;
-    width: 100%;
-    padding-left: 20;
+            width: 100%;
+            padding-left: 20;
         }
 
         .popup-active .bm-content-right {
@@ -86,24 +88,6 @@ html {
         .bm-cta-wrapper {
             margin-top: 1rem;
         }
-
-        .bm-cta-wrapper #open-registration-form,
-        #login-registration {
-            padding: 14px 50px;
-            font-size: 13px;
-            letter-spacing: 0.4px;
-            transition: all 0.5s;
-            border: 1px solid #222;
-            line-height: 18px;
-            outline-width: 0;
-            text-align: center;
-            background-color: #000;
-            color: #fff;
-            border-radius: 80px;
-            cursor: pointer;
-            width: auto !important;
-        }
-
         .bm-content-right-previous [type="email"]{
             color: #222;
             border: 0;
@@ -129,9 +113,7 @@ html {
             font-size: 11px;
         }
 
-        .bm-login-fetch-data #registration-form {
-            display: block !important;
-        }
+        
 
         .iframe-active #registration-form {
             display: block !important;
@@ -147,38 +129,9 @@ html {
             width: 100%;
             border: transparent;
         }
-        .iframe-active header,
-        .iframe-active .register .row .row .font-face-3+form.row,
-        .iframe-active .register .headline+.row>div:first-child,
-        .iframe-active .register #pre-registration-form,
-        .iframe-active footer {
-            display: none !important;
-        }
-        /* scrollbar css  */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+
     }
-    div.login-form,
-    // .container-fluid.fixed.p-0.scrolled,
-    footer.container-fluid,
-    .pusher >  header:not(.hello),
-    .bm-error{
-        display: none;
-    }
-    main[data-wio-id]{
-        margin-top: 0 !important;
-    }
-    .account.login.register .row > .col-12.col-lg-6:last-child > div#pre-registration-form > div{
-        display: none;
-    }
-    div.account.login #registration-form{
-        display: block !important;
-    }
-    .account.login  > div{
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-    }
+
 }
 .bm-email-input.show-error{
     border-bottom: 1px solid #d81414 !important;
@@ -190,4 +143,90 @@ html {
 }
 .bm-email-input.active + label{
     top: 0 !important;
+}
+header.container-fluid [href*="/login"]{
+    position: relative;
+}
+.bm-row{
+    position: absolute;
+    top: -12px;
+    left: 11px;
+}
+.cell {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+}
+.circle {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffd200;
+  color: #000;
+  font-size: 10px;
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+.bm-popup,
+#bm-popup-overlay{
+    display: none ;
+}
+ /* scrollbar css  */
+ ::-webkit-scrollbar {
+            width: 8px;
+}
+
+// iframe inner element none
+a.bm-removeanimation .bm-row,
+.account.login.register .row > .col-12.col-lg-6:last-child > div#pre-registration-form > div,
+.bm-pusharheader footer.container-fluid, 
+div.login-form,
+.bm-pusharheader > header,
+.bm-error{
+    display: none;
+}
+main[data-wio-id]{
+    margin-top: 0 !important;
+}
+div.account.login #registration-form{
+    display: block !important;
+}
+.account.login  > div{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+#registration-form {
+    display: block !important;
+}
+.bm-cta-wrapper #open-registration-form,
+#login-registration {
+    padding: 14px 50px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    transition: all 0.5s;
+    border: 1px solid #222;
+    line-height: 18px;
+    outline-width: 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 80px;
+    cursor: pointer;
+    width: auto !important;
 }
