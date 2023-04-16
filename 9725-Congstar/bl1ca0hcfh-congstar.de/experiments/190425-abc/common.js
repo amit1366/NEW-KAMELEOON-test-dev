@@ -11,15 +11,13 @@ export const commongoals = () => {
                 console.log('click login btn');
             }
 
-            // let login = document.querySelector(selectors.loginbutton);
-            // if (target.closest(login)) {
-            //     console.log('click login btn user');
-            // }
+            if (target.closest(selectors.loginbutton)) {
+                console.log('click login btn user');
+            }
 
-            let signupform = document.querySelector(selectors.bmloginButton);
-            if (target.closest(signupform)) {
+            if (target.closest(selectors.bmloginButton)) {
                 console.log('signup form');
-            } 
+            }
 
         });
 

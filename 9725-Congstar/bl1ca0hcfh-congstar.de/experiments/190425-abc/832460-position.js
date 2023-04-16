@@ -7,7 +7,7 @@ import { commongoals } from "./common";
 
 
 
-// commongoals()
+commongoals()
 function init() {
     // insert element 
     document.querySelector(selectors.header).insertAdjacentHTML('afterend', bmstring);
@@ -56,17 +56,20 @@ function init() {
     })
 
     document.querySelector(selectors.bmEmailInput).addEventListener('click', function () {
-        document.querySelector(selectors.bmEmailInput).classList.toggle('active')
+        if (this.target && !this.target.closest(".form-group")) {
+            document.querySelector(selectors.bmEmailInput).classList.remove('active')
+        }
+        document.querySelector(selectors.bmEmailInput).classList.add('active')
     })
 
 
     // Kameleoon.API.Core.runWhenElementPresent(selectors.headerLogindbtn, () => {
-    document.addEventListener('click', ({ target }) => {
-        console.log(target);
+    // document.addEventListener('click', ({ target }) => {
+        // console.log(target);
         // if (target.selectors.popupCrossIcon) {
         //     document.querySelector(selectors.body).classList.remove('bm-popup-active');
         // }
-    });
+    // });
     // });
 
 
