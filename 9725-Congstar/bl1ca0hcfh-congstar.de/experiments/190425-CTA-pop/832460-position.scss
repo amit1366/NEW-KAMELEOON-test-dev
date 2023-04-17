@@ -1,0 +1,117 @@
+html body {
+    overflow: hidden;
+
+    .bm-pdpiframe iframe.show-bm-iframe {       
+
+        .product-detailed-page__sections {
+            display: none;
+        }
+    }
+
+    .bm-overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 999;
+        display: none;
+    }
+
+    .bm-popup {
+        // padding: 0px;
+        // background: #fff;
+        // border-radius: 5px;
+        // max-width: 1025px;
+        // width: 100%;
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+        // z-index: 999;
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: fit-content;
+        max-width: 1027px;
+        margin: 0 auto!important;
+        transform: translateY(5%);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: left;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #444;
+        font-size: 14px;
+        z-index: 999999!important;
+        word-break: break-word;
+    }
+ 
+
+    .bm-pdpiframe iframe {
+        width: 1025px;
+        height: 92vh;
+        padding-top: 20px;
+
+
+    }
+
+    .bm-close {
+        font-size: 36px;
+        position: absolute;
+        right: 6px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}
+
+// popup element none
+.page-main.bm-pdp-content .product-detailed-page__container .product-detailed-page__top~ul,
+// .page-main.bm-pdp-content .product-detailed-page__container .product-detailed-page__top ~ul ~div,
+.footer.bm-popup-footer,
+.bm-pdp-content .product-detailed-page__sections,
+.bm-pdp-content .product-detailed-page__container .prudsys-recommendations-teaser,
+.bm-popup-header+.breadcrumbs,
+.header.bm-popup-header {
+    display: none !important;
+}
+
+.bmproduct-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.bmproduct-btn span {
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    width: 200px;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+html body.show-bm-product-detail {
+    overflow: hidden !important;
+
+    .bm-popup,
+    .bm-overlay {
+        display: block;
+    }
+}
+
+    /* scrollbar css  */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+ html.show-bm-iframe {
+    overflow: hidden;
+ }  

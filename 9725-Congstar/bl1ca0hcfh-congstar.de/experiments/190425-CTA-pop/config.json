@@ -1,0 +1,27 @@
+{
+"projectName": "[Congstar|T35] Legitimationsverfahren Position",
+"variations": [
+"Position"
+],
+"goalsToCreate": [
+"[T35] Click Weiter",
+"[T35] Click Mehr Details DHL",
+"[T35] Click Mehr Details IDnow",
+"[T35] Click Mehr Details KlarnaIdent",
+"[T35] Select DHL",
+"[T35] Select IDnow",
+"[T35] Select KlarnaIdent",
+"[T35] Succesful DHL",
+"[T35] Succesful IDnow",
+"[T35] Succesful KlarnaIdent",
+"[T35] Exit Legitimation",
+"[T35] Exit Übersicht"
+],
+"goalsToAdd": [
+293485,
+276768,
+200517,
+242783
+],
+"primaryGoal": 0
+}
