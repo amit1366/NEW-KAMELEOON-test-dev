@@ -5,7 +5,6 @@ export const commongoals = () => {
     Kameleoon.API.Core.runWhenElementPresent('header', () => {
         // console.log(' inside main function - common code');
         Kameleoon.API.Utils.addUniversalClickListener(document, ({ target }) => {
-            console.log('click goal');
             // let loginbutton = document.querySelector(selectors.headerLogindbtn)
             if (target.closest(selectors.headerLogindbtn)) {
                 console.log('click login btn');
@@ -20,7 +19,6 @@ export const commongoals = () => {
             }
 
         });
-
 
     }, 200);
 

@@ -14,7 +14,8 @@ function init() {
     document.querySelector(selectors.headerLogindbtn).insertAdjacentHTML('afterBegin', animatehtml)
 
 
-    // clik on ragister button
+    /*clik on bm
+    ragister button*/
     document.querySelector(selectors.bmloginButton).addEventListener('click', function () {
         console.log('click');
         let input = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
@@ -41,36 +42,37 @@ function init() {
 
 
 
-    // click on user login
+    /*click on header
+    login icon */
     document.querySelector(selectors.headerLogindbtn).addEventListener('click', function (e) {
         e.preventDefault()
         document.querySelector(selectors.body).classList.add('bm-popup-active');
         this.classList.add('bm-removeanimation')
     })
 
+    /*click on cross icon
+    remove popup */
     document.querySelector(selectors.popupCrossIcon).addEventListener('click', function (e) {
         document.querySelector(selectors.body).classList.remove('bm-popup-active');
     })
+
+    // click on overlay
     document.querySelector(selectors.bmOverlay).addEventListener('click', function (e) {
         document.querySelector(selectors.body).classList.remove('bm-popup-active');
     })
 
+    // click on input register button
     document.querySelector(selectors.bmEmailInput).addEventListener('click', function () {
-        if (this.target && !this.target.closest(".form-group")) {
+        document.querySelector(selectors.bmEmailInput).classList.add('active')
+    });
+
+    // click outside the popup remove popup
+    var ignoreClickOnMeElement = document.querySelector(selectors.body)
+    ignoreClickOnMeElement.addEventListener('click', function (event) {
+        if (!event.target.closest(selectors.bmEmailInput)) {
             document.querySelector(selectors.bmEmailInput).classList.remove('active')
         }
-        document.querySelector(selectors.bmEmailInput).classList.add('active')
-    })
-
-
-    // Kameleoon.API.Core.runWhenElementPresent(selectors.headerLogindbtn, () => {
-    // document.addEventListener('click', ({ target }) => {
-        // console.log(target);
-        // if (target.selectors.popupCrossIcon) {
-        //     document.querySelector(selectors.body).classList.remove('bm-popup-active');
-        // }
-    // });
-    // });
+    });
 
 
 }
