@@ -1,10 +1,13 @@
+import { selectors } from "./selectors";
+
 // on click overlay and  cross  function
 function hideOnAction(selector) {
     const element = document.querySelector(selector);
     if (element) {
         element.addEventListener('click', () => {
-            document.querySelector('body').classList.remove('show-bm-product-detail');
-            document.querySelector('html').classList.remove('show-bm-iframe');
+            document.querySelector(selectors.bmBodyel).classList.remove(selectors.bmProductDetail);
+            document.querySelector(selectors.bmHtml).classList.remove(selectors.bmIframe);
+
         });
     }
 }
@@ -16,14 +19,14 @@ function iframecontent() {
     setTimeout(function () {
 
         //get element iframe content
-        var iframe = document.querySelector('div.bm-pdpiframe iframe');
-        iframe.contentWindow.document.querySelector('#novosales-app > header').classList.add('bm-popup-header')
-        iframe.contentWindow.document.querySelector('.page-main').classList.add('bm-pdp-content')
-        iframe.contentWindow.document.querySelector('footer.footer').classList.add('bm-popup-footer')
+        var iframe = document.querySelector(selectors.iframeElement);
+        iframe.contentWindow.document.querySelector(selectors.iframeHeader).classList.add('bm-popup-header')
+        iframe.contentWindow.document.querySelector(selectors.mainContent).classList.add('bm-pdp-content')
+        iframe.contentWindow.document.querySelector(selectors.bmFooter).classList.add('bm-popup-footer')
 
         /* when the user click on popup atc button */
-        const bmModalIframe = document.querySelector('div.bm-pdpiframe iframe');
-        const atcButton = iframe.contentWindow.document.querySelector('.sale-box__button-to-cart > button')
+        const bmModalIframe = document.querySelector(selectors.iframeElement);
+        const atcButton = iframe.contentWindow.document.querySelector(selectors.iframeAtcButton)
         atcButton.addEventListener('click', async () => {
             console.log('click butto');
             try {
@@ -31,7 +34,7 @@ function iframecontent() {
                 const data = await response.text();
                 if (response.url.includes('/basket/add/')) {
                     setTimeout(() => {
-                        const modalatc = bmModalIframe.contentWindow.document.querySelector('#addToCartModal a.add-to-cart-modal__button');
+                        const modalatc = bmModalIframe.contentWindow.document.querySelector(selectors.modalAtcButton);
                         modalatc.classList.add('bm-modal-atc');
                         modalatc.addEventListener('click', async () => {
                             console.log('add to cart');
@@ -49,14 +52,16 @@ function iframecontent() {
             }
         });
 
-    }, 800)
+    }, 1000)
 }
 
 
+/** insert btn on product
+ *  or get pdp url*/
 export function insertbtnel() {
-    const productElements = document.querySelectorAll('.products-list .products-list__element');
+    const productElements = document.querySelectorAll(selectors.PlpProducts);
     productElements.forEach((el) => {
-        const productWrapper = el.querySelector('.product-box__details');
+        const productWrapper = el.querySelector(selectors.productDetail);
         console.log(productWrapper)
         if (productWrapper) {
             if (productWrapper.querySelector('.bmproduct-btn')) return
@@ -64,18 +69,19 @@ export function insertbtnel() {
 
         }
 
-        const buttonEl = el.querySelector('.bmproduct-btn span');
+        /** click event on appear hover product btn */
+        const buttonEl = el.querySelector(selectors.bmProductBtn);
         if (buttonEl) {
             buttonEl.addEventListener('click', () => {
-                const getUrl = el.querySelector('.product-box__name').getAttribute('href');
-                document.querySelector('.bm-pdpiframe iframe').setAttribute('src', getUrl);
-                document.querySelector('body').classList.add('show-bm-product-detail');
+                const getUrl = el.querySelector(selectors.productAttrel).getAttribute('href');
+                document.querySelector(selectors.popupIframe).setAttribute('src', getUrl);
+                document.querySelector(selectors.bmBodyel).classList.add(selectors.bmProductDetail);
                 iframecontent();
-                document.querySelector('html').classList.add('show-bm-iframe');
+                document.querySelector(selectors.bmHtml).classList.add(selectors.bmIframe);
 
                 // on click overlay and  cross 
-                const crossButton = '.bm-close';
-                const overlayButton = '.bm-overlay';
+                const crossButton = selectors.popupCloseIcon;
+                const overlayButton = selectors.popupOverlay;
                 hideOnAction(crossButton);
                 hideOnAction(overlayButton);
             });
