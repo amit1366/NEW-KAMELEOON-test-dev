@@ -1,86 +1,86 @@
-import { selectors } from "./selectors";
-
-function live(selector, event, callback, context) {
-    /****Helper Functions****/
-    // helper for enabling IE 8 event bindings
-    function addEvent(el, type, handler) {
-        if (el.attachEvent) el.attachEvent("on" + type, handler);
-        else el.addEventListener(type, handler);
-    }
-    // matches polyfill
-    this && this.Element &&
-        (function (ElementPrototype) {
-            ElementPrototype.matches =
-                ElementPrototype.matches ||
-                ElementPrototype.matchesSelector ||
-                ElementPrototype.webkitMatchesSelector ||
-                ElementPrototype.msMatchesSelector ||
-                function (selector) {
-                    var node = this,
-                        nodes = (
-                            node.parentNode || node.document
-                        ).querySelectorAll(selector),
-                        i = -1;
-                    while (nodes[++i] && nodes[i] != node);
-                    return !!nodes[i];
-                };
-        })(Element.prototype);
-    // live binding helper using matchesSelector
-    function live(selector, event, callback, context) {
-        addEvent(context || document, event, function (e) {
-            var found,
-                el = e.target || e.srcElement;
-            while (
-                el &&
-                el.matches &&
-                el !== context &&
-                !(found = el.matches(selector))
-            )
-                el = el.parentElement;
-            if (found) callback.call(el, e);
+// on click overlay and  cross  function
+function hideOnAction(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.addEventListener('click', () => {
+            document.querySelector('body').classList.remove('show-bm-product-detail');
+            document.querySelector('html').classList.remove('show-bm-iframe');
         });
     }
-    live(selector, event, callback, context);
 }
 
-export const showpopup = () => {
-    // click in register btn popup
-    live(selectors.bmloginButton, 'click', function () {
-        console.log('click');
-        let input = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
-        console.log(input);
-        let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (input.match(validRegex) && input != '') {
-            document.querySelector(selectors.body).classList.add('popup-active')
-            this.closest(selectors.formRightSec).classList.add('d-none')
-            document.querySelector(selectors.iframeMainel).classList.remove('d-none');
-        } else {
-            document.querySelector(selectors.bmEmailInput).classList.add('show-error')
+/* click on
+iframe atc button 
+*/
+function iframecontent() {
+    setTimeout(function () {
+
+        //get element iframe content
+        var iframe = document.querySelector('div.bm-pdpiframe iframe');
+        iframe.contentWindow.document.querySelector('#novosales-app > header').classList.add('bm-popup-header')
+        iframe.contentWindow.document.querySelector('.page-main').classList.add('bm-pdp-content')
+        iframe.contentWindow.document.querySelector('footer.footer').classList.add('bm-popup-footer')
+
+        /* when the user click on popup atc button */
+        const bmModalIframe = document.querySelector('div.bm-pdpiframe iframe');
+        const atcButton = iframe.contentWindow.document.querySelector('.sale-box__button-to-cart > button')
+        atcButton.addEventListener('click', async () => {
+            console.log('click butto');
+            try {
+                const response = await fetch('https://www.falke.com/de_de/ajax/basket/add/');
+                const data = await response.text();
+                if (response.url.includes('/basket/add/')) {
+                    setTimeout(() => {
+                        const modalatc = bmModalIframe.contentWindow.document.querySelector('#addToCartModal a.add-to-cart-modal__button');
+                        modalatc.classList.add('bm-modal-atc');
+                        modalatc.addEventListener('click', async () => {
+                            console.log('add to cart');
+                            const basketResponse = await fetch('https://www.falke.com/de_de/basket/');
+                            const basketData = await basketResponse.text();
+                            console.log(basketResponse.url.includes('/basket/'));
+                            if (basketResponse.url.includes('/basket/')) {
+                                window.location.href = 'https://www.falke.com/de_de/basket/';
+                            }
+                        });
+                    }, 1000);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        });
+
+    }, 800)
+}
+
+
+export function insertbtnel() {
+    const productElements = document.querySelectorAll('.products-list .products-list__element');
+    productElements.forEach((el) => {
+        const productWrapper = el.querySelector('.product-box__details');
+        console.log(productWrapper)
+        if (productWrapper) {
+            if (productWrapper.querySelector('.bmproduct-btn')) return
+            productWrapper.insertAdjacentHTML('afterbegin', '<div class="bmproduct-btn"><span>In den Warenkorb</span></div>');
+
         }
 
-        // when iframe present 
-        let iframe = document.querySelector(selectors.bmIframe);
-        let iframeheaderel = iframe.contentWindow.document.querySelector('.pusher')
-        iframeheaderel.classList.add('bm-pusharheader');
-        let fornemail = iframe.contentWindow.document.querySelector(selectors.iframeEmail)
-        fornemail.value = input
-        let form = iframe.contentWindow.document.querySelector(selectors.popupForm);
-        form.setAttribute('target', "_parent")
-    })
+        const buttonEl = el.querySelector('.bmproduct-btn span');
+        if (buttonEl) {
+            buttonEl.addEventListener('click', () => {
+                const getUrl = el.querySelector('.product-box__name').getAttribute('href');
+                document.querySelector('.bm-pdpiframe iframe').setAttribute('src', getUrl);
+                document.querySelector('body').classList.add('show-bm-product-detail');
+                iframecontent();
+                document.querySelector('html').classList.add('show-bm-iframe');
 
-
-    // 
-    live(selectors.bmEmailInput, 'click', function () {
-        document.querySelector(selectors.bmEmailInput).classList.toggle('active')
+                // on click overlay and  cross 
+                const crossButton = '.bm-close';
+                const overlayButton = '.bm-overlay';
+                hideOnAction(crossButton);
+                hideOnAction(overlayButton);
+            });
+        }
     });
-
-    live('.bm-close, #bm-popup-overlay', 'click', function () {
-        document.querySelector(selectors.body).classList.remove('bm-popup-active');
-    })
-
-    // click on header loginbtn show popup
-    live(selectors.headerLogindbtn, 'click', function (e) {
-        e.preventDefault()
-        document.querySelector(selectors.body).classList.add('bm-popup-active');
-    })
 }
+
+
