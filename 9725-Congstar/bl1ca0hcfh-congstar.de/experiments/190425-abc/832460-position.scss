@@ -117,12 +117,6 @@ html {
         .register span {
             font-size: 11px;
         }
-
-        
-
-        .iframe-active #registration-form {
-            display: block !important;
-        }
         .bm-login-fetch-data,
         .bm-iframe {
             height: 100%;
@@ -195,12 +189,14 @@ header.container-fluid [href*="/login"]{
  ::-webkit-scrollbar {
             width: 8px;
 }
-
+.pusher.bm-pusharheader .iframe-active #registration-form {
+            display: block !important;
+        }
 // iframe inner element none
 a.bm-removeanimation .bm-row,
-.account.login.register .row > .col-12.col-lg-6:last-child > div#pre-registration-form > div,
+.pusher.bm-pusharheader .account.login.register .row > .col-12.col-lg-6:last-child > div#pre-registration-form > div,
 .bm-pusharheader footer.container-fluid, 
-div.login-form,
+.pusher.bm-pusharheader div.login-form,
 .bm-pusharheader > header,
 .bm-error{
     display: none;
@@ -233,4 +229,31 @@ div.account.login #registration-form{
     border-radius: 80px;
     cursor: pointer;
     width: auto !important;
+}
+/* Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Firefox */
+::-moz-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+::-moz-scrollbar-track {
+  background-color: #f1f1f1;
 }

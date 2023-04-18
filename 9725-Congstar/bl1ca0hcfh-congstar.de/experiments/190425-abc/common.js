@@ -7,15 +7,18 @@ export const commongoals = () => {
         Kameleoon.API.Utils.addUniversalClickListener(document, ({ target }) => {
             // let loginbutton = document.querySelector(selectors.headerLogindbtn)
             if (target.closest(selectors.headerLogindbtn)) {
-                console.log('click login btn');
+                Kameleoon.API.Goals.processConversion(goals['[T17] Icon click_BM']);
+                console.log('[T17] Icon click_BM');
             }
 
-            if (target.closest(selectors.loginbutton)) {
-                console.log('click login btn user');
+            if (target.closest(selectors.loginbutton) || target.closest(selectors.controlLoginBtn)) {
+                Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Login_BM']);
+                console.log('[T17] Step 1 Login_BM');
             }
 
-            if (target.closest(selectors.bmloginButton)) {
-                console.log('signup form');
+            if (target.closest(selectors.controlRegistartionBtn)) {
+                Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Registration_BM']);
+                console.log('[T17] Step 1 Registration_BM');
             }
 
         });

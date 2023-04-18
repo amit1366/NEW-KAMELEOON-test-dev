@@ -1,7 +1,4 @@
-// console.log('New2 SS variation code called');
 import { bmstring, animatehtml } from "./html";
-// import { bmTogglefunction } from "./functions";
-// import { live, showpopup } from "./functions";
 import { selectors } from "./selectors";
 import { commongoals } from "./common";
 
@@ -13,32 +10,35 @@ function init() {
     document.querySelector(selectors.header).insertAdjacentHTML('afterend', bmstring);
     document.querySelector(selectors.headerLogindbtn).insertAdjacentHTML('afterBegin', animatehtml)
 
-
     /*clik on bm
     ragister button*/
-    document.querySelector(selectors.bmloginButton).addEventListener('click', function () {
-        console.log('click');
+    document.querySelector(selectors.bmregistrationButton).addEventListener('click', function () {
         let input = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
-        console.log(input);
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (input.match(validRegex) && input != '') {
             document.querySelector(selectors.body).classList.add('popup-active')
             this.closest(selectors.formRightSec).classList.add('d-none')
             document.querySelector(selectors.iframeMainel).classList.remove('d-none');
+            Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Registration_BM']);
+            console.log('[T17] Step 1 Login_BM');
         } else {
             document.querySelector(selectors.bmEmailInput).classList.add('show-error')
         }
+        getiframeelement()
+    })
 
+    /**  */
+    function getiframeelement() {
         // when iframe present 
+        let inputval = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
         let iframe = document.querySelector(selectors.bmIframe);
         let iframeheaderel = iframe.contentWindow.document.querySelector('.pusher')
         iframeheaderel.classList.add('bm-pusharheader');
         let fornemail = iframe.contentWindow.document.querySelector(selectors.iframeEmail);
         fornemail.classList.add('active')
-        fornemail.value = input
-        let form = iframe.contentWindow.document.querySelector(selectors.popupForm);
-        form.setAttribute('target', "_parent")
-    })
+        fornemail.value = inputval
+    }
+
 
 
 
@@ -75,7 +75,27 @@ function init() {
     });
 
 
+    /**when submit form redirect url */
+    // Get the iframe element
+    var iframedatalayer = document.querySelector(selectors.bmIframe);
+    // attach a load event listener to the iframe
+    iframedatalayer.addEventListener("load", () => {
+        // check if the iframe has been reloaded after form submission
+        const iframeUrl = iframedatalayer.contentWindow.location.href;
+        let fire = false;
+        if (iframeUrl == "https://www.seidensticker.com/de/de/account" && fire == false) {
+            //onDataHelperLoad()
+            fire = true;
+            window.location.href = 'https://www.seidensticker.com/de/de/account';
+            Kameleoon.API.Goals.processConversion(goals['[T17] Step 2_BM']);
+            console.log('[T17] Step 2_BM');
+        }
+        getiframeelement()
+    });
+
+
 }
 Kameleoon.API.Core.runWhenElementPresent('header a[href*="login"]', () => {
     init();
+
 }, 500);
