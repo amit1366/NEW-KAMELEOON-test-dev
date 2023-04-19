@@ -1,86 +1,103 @@
+
 import { selectors } from "./selectors";
 
-function live(selector, event, callback, context) {
-    /****Helper Functions****/
-    // helper for enabling IE 8 event bindings
-    function addEvent(el, type, handler) {
-        if (el.attachEvent) el.attachEvent("on" + type, handler);
-        else el.addEventListener(type, handler);
-    }
-    // matches polyfill
-    this && this.Element &&
-        (function (ElementPrototype) {
-            ElementPrototype.matches =
-                ElementPrototype.matches ||
-                ElementPrototype.matchesSelector ||
-                ElementPrototype.webkitMatchesSelector ||
-                ElementPrototype.msMatchesSelector ||
-                function (selector) {
-                    var node = this,
-                        nodes = (
-                            node.parentNode || node.document
-                        ).querySelectorAll(selector),
-                        i = -1;
-                    while (nodes[++i] && nodes[i] != node);
-                    return !!nodes[i];
-                };
-        })(Element.prototype);
-    // live binding helper using matchesSelector
-    function live(selector, event, callback, context) {
-        addEvent(context || document, event, function (e) {
-            var found,
-                el = e.target || e.srcElement;
-            while (
-                el &&
-                el.matches &&
-                el !== context &&
-                !(found = el.matches(selector))
-            )
-                el = el.parentElement;
-            if (found) callback.call(el, e);
-        });
-    }
-    live(selector, event, callback, context);
+
+
+/** get iframe element  */
+function getiframeelement() {
+    // when iframe present 
+    let inputval = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
+    let iframe = document.querySelector(selectors.bmIframe);
+    let iframeheaderel = iframe.contentWindow.document.querySelector('.pusher')
+    iframeheaderel.classList.add('bm-pusharheader');
+    let fornemail = iframe.contentWindow.document.querySelector(selectors.iframeEmail);
+    fornemail.classList.add('active')
+    fornemail.value = inputval
 }
 
-export const showpopup = () => {
-    // click in register btn popup
-    live(selectors.bmloginButton, 'click', function () {
-        console.log('click');
+
+
+/** insert btn on product
+ *  or get pdp url*/
+export function listnerclickhandler() {
+
+    /*clik on bm
+ragister button*/
+    document.querySelector(selectors.bmregistrationButton).addEventListener('click', function () {
         let input = Kameleoon.API.Utils.querySelectorAll('.bm-email-input')[0].value
-        console.log(input);
         let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (input.match(validRegex) && input != '') {
             document.querySelector(selectors.body).classList.add('popup-active')
             this.closest(selectors.formRightSec).classList.add('d-none')
             document.querySelector(selectors.iframeMainel).classList.remove('d-none');
+            Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Registration_BM']);
+            console.log('[T17] Step 1 Login_BM');
         } else {
             document.querySelector(selectors.bmEmailInput).classList.add('show-error')
         }
-
-        // when iframe present 
-        let iframe = document.querySelector(selectors.bmIframe);
-        let iframeheaderel = iframe.contentWindow.document.querySelector('.pusher')
-        iframeheaderel.classList.add('bm-pusharheader');
-        let fornemail = iframe.contentWindow.document.querySelector(selectors.iframeEmail)
-        fornemail.value = input
-        let form = iframe.contentWindow.document.querySelector(selectors.popupForm);
-        form.setAttribute('target', "_parent")
+        getiframeelement()
     })
 
 
-    // 
-    live(selectors.bmEmailInput, 'click', function () {
-        document.querySelector(selectors.bmEmailInput).classList.toggle('active')
-    });
+    /*click on header
+    login icon */
+    document.querySelector(selectors.headerLogindbtn).addEventListener('click', function (e) {
+        e.preventDefault()
+        document.querySelector(selectors.body).classList.add('bm-popup-active');
+        this.classList.add('bm-removeanimation')
+        window.sessionStorage.setItem("bm-login", "true");
+    })
 
-    live('.bm-close, #bm-popup-overlay', 'click', function () {
+    /*click on cross icon
+    remove popup */
+    document.querySelector(selectors.popupCrossIcon).addEventListener('click', function (e) {
         document.querySelector(selectors.body).classList.remove('bm-popup-active');
     })
 
-    // click on header loginbtn show popup
-    live(selectors.headerLogindbtn, 'click', function (e) {
-        e.preventDefault()
-        document.querySelector(selectors.body).classList.add('bm-popup-active');
+    // click on overlay
+    document.querySelector(selectors.bmOverlay).addEventListener('click', function (e) {
+        document.querySelector(selectors.body).classList.remove('bm-popup-active');
     })
+
+    // click on input register button
+    document.querySelector(selectors.bmEmailInput).addEventListener('click', function () {
+        document.querySelector(selectors.bmEmailInput).classList.add('active')
+    });
+
+    // click outside the popup remove popup
+    var ignoreClickOnMeElement = document.querySelector(selectors.body)
+    ignoreClickOnMeElement.addEventListener('click', function (event) {
+        if (!event.target.closest(selectors.bmEmailInput)) {
+            document.querySelector(selectors.bmEmailInput).classList.remove('active')
+        }
+    });
+
+
+    /**when submit form redirect url */
+    // Get the iframe element
+    var iframedatalayer = document.querySelector(selectors.bmIframe);
+    // attach a load event listener to the iframe
+    iframedatalayer.addEventListener("load", () => {
+        // check if the iframe has been reloaded after form submission
+        const iframeUrl = iframedatalayer.contentWindow.location.href;
+        let fire = false;
+        if (iframeUrl == "https://www.seidensticker.com/de/de/account" && fire == false) {
+            //onDataHelperLoad()
+            fire = true;
+            window.location.href = 'https://www.seidensticker.com/de/de/account';
+            Kameleoon.API.Goals.processConversion(goals['[T17] Step 2_BM']);
+            console.log('[T17] Step 2_BM');
+        }
+        getiframeelement()
+    });
+
+
+    // remove animate icon gewt session
+    if (window.sessionStorage.getItem('bm-login')) {
+        console.log('session');
+        document.querySelector(selectors.body).classList.add('bm-loginicon-remove')
+    }
+
 }
+
+

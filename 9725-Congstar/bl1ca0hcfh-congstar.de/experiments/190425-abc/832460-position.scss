@@ -19,7 +19,7 @@ html {
             border-radius: 5px;
              max-width: 748px;
              width: 100%;
-            position: absolute;
+            position:fixed;
             left: 50%;
            top: 50%;
           transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@ html {
         }
 
         .bm-popup .bm-close:hover {
-            color: #06D85F;
+            color: #333;
         }
 
         .bm-popup .bm-content {
@@ -148,8 +148,8 @@ header.container-fluid [href*="/login"]{
 }
 .bm-row{
     position: absolute;
-    top: -12px;
-    left: 11px;
+    top: -16px;
+    left: 10px;
 }
 .cell {
     display: inline-block;
@@ -158,8 +158,8 @@ header.container-fluid [href*="/login"]{
 }
 .circle {
     display: flex;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #ffd200;
     color: #000;
@@ -256,4 +256,12 @@ div.account.login #registration-form{
 
 ::-moz-scrollbar-track {
   background-color: #f1f1f1;
+}
+@media (min-width: 1024px){
+ html body header:not(.no-margin) ~main {
+        margin-top: 140px !important; 
+    }
+}
+html body.bm-loginicon-remove header.container-fluid a[href*="/de/de/account/login"] .bm-row{
+    display: none;
 }
