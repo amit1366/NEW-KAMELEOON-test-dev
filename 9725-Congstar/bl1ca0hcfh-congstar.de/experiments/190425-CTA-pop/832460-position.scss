@@ -105,3 +105,11 @@ html body.show-bm-product-detail {
  html.show-bm-iframe {
     overflow: hidden;
  }  
+
+ @media screen and (max-width:1024px) {
+    html body div.bm-overlay,
+    html body div.bm-popup,
+    html body div.bmproduct-btn{
+        display: none !important;
+    }
+ }
