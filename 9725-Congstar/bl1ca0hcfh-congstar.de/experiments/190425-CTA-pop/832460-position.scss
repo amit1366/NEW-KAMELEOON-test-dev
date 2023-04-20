@@ -86,7 +86,9 @@ html body {
 .header.bm-popup-header {
     display: none !important;
 }
-
+div.products-list__element .product-box:hover .product-box__colors{
+    top: 40px !important;
+}
 html body.show-bm-product-detail {
     overflow: hidden !important;
 
