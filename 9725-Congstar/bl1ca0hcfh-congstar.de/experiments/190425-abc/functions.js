@@ -30,12 +30,13 @@ ragister button*/
             document.querySelector(selectors.body).classList.add('popup-active')
             this.closest(selectors.formRightSec).classList.add('d-none')
             document.querySelector(selectors.iframeMainel).classList.remove('d-none');
-            Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Registration_BM']);
+            getiframeelement()
+            // Kameleoon.API.Goals.processConversion(goals['[T17] Step 1 Registration_BM']);
             console.log('[T17] Step 1 Login_BM');
         } else {
             document.querySelector(selectors.bmEmailInput).classList.add('show-error')
         }
-        getiframeelement()
+
     })
 
 
@@ -67,7 +68,7 @@ ragister button*/
     // click outside the popup remove popup
     var ignoreClickOnMeElement = document.querySelector(selectors.body)
     ignoreClickOnMeElement.addEventListener('click', function (event) {
-        if (!event.target.closest(selectors.bmEmailInput)) {
+        if (!event.target.closest(selectors.bmEmailInput) && document.querySelector(selectors.bmEmailInput).value == '') {
             document.querySelector(selectors.bmEmailInput).classList.remove('active')
         }
     });
@@ -93,10 +94,10 @@ ragister button*/
 
 
     // remove animate icon gewt session
-    if (window.sessionStorage.getItem('bm-login')) {
-        console.log('session');
-        document.querySelector(selectors.body).classList.add('bm-loginicon-remove')
-    }
+    // if (window.sessionStorage.getItem('bm-login')) {
+    //     console.log('session');
+    //     document.querySelector(selectors.body).classList.add('bm-loginicon-remove')
+    // }
 
 }
 

@@ -96,13 +96,20 @@ html {
         .bm-content-right-previous [type="email"]{
             color: #222;
             border: 0;
-            border-bottom: 1px solid #222;
             border-radius: 0;
             margin: 12px 0 0;
             padding-left: 0;
             height: 38px;
             outline: none;
-            width: 100%;
+            border: 1px solid #00000073;
+            height: 50px;
+            width: 327px;
+            padding: 10px;
+            position: relative;
+            z-index: 999;
+            background: transparent;
+            font-size: 11px;
+            padding-bottom: 0px;
         }
 
         #login-registration {
@@ -133,15 +140,17 @@ html {
 
 }
 .bm-email-input.show-error{
-    border-bottom: 1px solid #d81414 !important;
+    border: 1px solid #d81414 !important;
 
 }
 .bm-email-input + label{
-    top: 20px !important;
-    left: 0;
+    top: 28px !important;
+    left: 10px;
 }
 .bm-email-input.active + label{
-    top: 0 !important;
+    top: 15px !important;
+    left: 10px !important;
+    z-index: 999;
 }
 header.container-fluid [href*="/login"]{
     position: relative;
@@ -228,7 +237,24 @@ div.account.login #registration-form{
     color: #fff;
     border-radius: 80px;
     cursor: pointer;
-    width: auto !important;
+    width: 176px !important;
+    height: 41px;
+    align-items: center;
+    display: flex;
+}
+.form-group input[type='text'].active+label{
+    top: -10px !important;
+}
+button#login-registration{
+    display: inherit !important;
+    height: 24px;
+    width: 80px!important;
+}
+form[name="account_register"] .col-12.mt-md-2{
+    padding:7px 0;
+}
+form[name="account_register"] .col-12.mt-md-2 input.active{
+    padding-bottom: 0px !important;
 }
 /* Webkit-based browsers */
 ::-webkit-scrollbar {

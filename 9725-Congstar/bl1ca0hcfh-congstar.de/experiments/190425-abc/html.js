@@ -22,7 +22,7 @@ export const bmstring = `
            </p>
            <div class="form-group">
             <input class="bm-email-input" type="email" required="required" name="email" >
-            <label class="form-control-label required" for="account_register_last_name">E-Mail Adresse</label>
+            <label class="form-control-label required" for="account_register_last_name">E-Mail</label>
             <span class="bm-error">this field required</span>
            </div>
            <div class="bm-cta-wrapper">
