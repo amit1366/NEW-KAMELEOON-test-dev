@@ -17,9 +17,8 @@ html {
             padding: 0px;
             background: #fff;
             border-radius: 5px;
-             max-width: 726px;
-            //  height: 417px;
-             width: 100%;
+             width: 726px;
+             height: 417px;
             position:fixed;
             left: 50%;
            top: 50%;
@@ -57,7 +56,8 @@ html {
             justify-content: space-between;
         }
         .bm-content-left{
-            width: 217px;
+          width: 217px;
+          height: 417px;
         }
         .teaser {
             width: 210px;
@@ -72,7 +72,8 @@ html {
         }
         .bm-content-right {
             padding: 40px;
-            width:509px;
+            width: 509px;
+            height: 417px;
 
             .bm-content-right-previous{
                 h1{

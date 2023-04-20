@@ -67,7 +67,7 @@ ragister button*/
 
     // click outside the popup remove popup
     var ignoreClickOnMeElement = document.querySelector(selectors.body)
-    ignoreClickOnMeElement.addEventListener('click', function (event) {
+    ignoreClickOnMeElement.addEventListener('mousedown', function (event) {
         if (!event.target.closest(selectors.bmEmailInput) && document.querySelector(selectors.bmEmailInput).value == '') {
             document.querySelector(selectors.bmEmailInput).classList.remove('active')
         }
