@@ -113,3 +113,14 @@ html body.show-bm-product-detail {
         display: none !important;
     }
  }
+ .bm-details{
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: -15px;
+ }
+  .bm-details a{
+    color: #1a1919;
+    font-size: 12px;
+    font-weight: 300;
+  }

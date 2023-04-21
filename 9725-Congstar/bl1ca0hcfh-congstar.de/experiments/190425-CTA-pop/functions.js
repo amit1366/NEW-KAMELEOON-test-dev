@@ -28,7 +28,6 @@ function iframecontent() {
         const bmModalIframe = document.querySelector(selectors.iframeElement);
         const atcButton = iframe.contentWindow.document.querySelector(selectors.iframeAtcButton)
         atcButton.addEventListener('click', async () => {
-            console.log('click butto');
             try {
                 const response = await fetch('https://www.falke.com/de_de/ajax/basket/add/');
                 const data = await response.text();
@@ -37,10 +36,8 @@ function iframecontent() {
                         const modalatc = bmModalIframe.contentWindow.document.querySelector(selectors.modalAtcButton);
                         modalatc.classList.add('bm-modal-atc');
                         modalatc.addEventListener('click', async () => {
-                            console.log('add to cart');
                             const basketResponse = await fetch('https://www.falke.com/de_de/basket/');
                             const basketData = await basketResponse.text();
-                            console.log(basketResponse.url.includes('/basket/'));
                             if (basketResponse.url.includes('/basket/')) {
                                 window.location.href = 'https://www.falke.com/de_de/basket/';
                             }
@@ -48,7 +45,7 @@ function iframecontent() {
                     }, 1000);
                 }
             } catch (error) {
-                console.error(error);
+
             }
         });
 
@@ -62,7 +59,7 @@ export function insertbtnel() {
     const productElements = document.querySelectorAll(selectors.PlpProducts);
     productElements.forEach((el) => {
         const productWrapper = el.querySelector(selectors.productDetail);
-        console.log(productWrapper)
+
         if (productWrapper) {
             if (productWrapper.querySelector('.bmproduct-btn')) return
             productWrapper.insertAdjacentHTML('afterbegin', '<div class="bmproduct-btn"><span>In den Warenkorb</span></div>');
@@ -75,15 +72,22 @@ export function insertbtnel() {
             buttonEl.addEventListener('click', () => {
                 const getUrl = el.querySelector(selectors.productAttrel).getAttribute('href');
                 document.querySelector(selectors.popupIframe).setAttribute('src', getUrl);
+
                 document.querySelector(selectors.bmBodyel).classList.add(selectors.bmProductDetail);
                 iframecontent();
                 document.querySelector(selectors.bmHtml).classList.add(selectors.bmIframe);
-
                 // on click overlay and  cross 
                 const crossButton = selectors.popupCloseIcon;
                 const overlayButton = selectors.popupOverlay;
                 hideOnAction(crossButton);
                 hideOnAction(overlayButton);
+
+                setTimeout(function () {
+                    const bmModalIframemodal = document.querySelector(selectors.iframeElement);
+                    const atcButtonmodal = bmModalIframemodal.contentWindow.document.querySelector('.pdp-size-variations.sale-box__size-variations')
+                    console.log(atcButtonmodal);
+                    atcButtonmodal.insertAdjacentHTML('afterend', "<div class=\"bm-details\"><a href=" + getUrl + ">mehr Details</a></div>")
+                }, 1000)
             });
         }
     });
