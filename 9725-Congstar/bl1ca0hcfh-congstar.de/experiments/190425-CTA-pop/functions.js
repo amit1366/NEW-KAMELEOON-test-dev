@@ -28,25 +28,26 @@ function iframecontent() {
         const bmModalIframe = document.querySelector(selectors.iframeElement);
         const atcButton = iframe.contentWindow.document.querySelector(selectors.iframeAtcButton)
         atcButton.addEventListener('click', async () => {
-            try {
-                const response = await fetch('https://www.falke.com/de_de/ajax/basket/add/');
-                const data = await response.text();
-                if (response.url.includes('/basket/add/')) {
-                    setTimeout(() => {
-                        const modalatc = bmModalIframe.contentWindow.document.querySelector(selectors.modalAtcButton);
-                        modalatc.classList.add('bm-modal-atc');
-                        modalatc.addEventListener('click', async () => {
-                            const basketResponse = await fetch('https://www.falke.com/de_de/basket/');
-                            const basketData = await basketResponse.text();
-                            if (basketResponse.url.includes('/basket/')) {
-                                window.location.href = 'https://www.falke.com/de_de/basket/';
-                            }
-                        });
-                    }, 1000);
-                }
-            } catch (error) {
+            // try {
+            //     const response = await fetch('https://www.falke.com/de_de/ajax/basket/add/');
+            //     const data = await response.text();
+            //     if (response.url.includes('/basket/add/')) {
+            //         setTimeout(() => {
+            //             const modalatc = bmModalIframe.contentWindow.document.querySelector(selectors.modalAtcButton);
+            //             modalatc.classList.add('bm-modal-atc');
+            //             modalatc.addEventListener('click', async () => {
+            //                 const basketResponse = await fetch('https://www.falke.com/de_de/basket/');
+            //                 const basketData = await basketResponse.text();
+            //                 if (basketResponse.url.includes('/basket/')) {
+            //                     window.location.href = 'https://www.falke.com/de_de/basket/';
+            //                 }
+            //             });
+            //         }, 1000);
+            //     }
+            // } catch (error) {
 
-            }
+            // }
+            console.log('hello');
         });
 
     }, 1000)
