@@ -1,0 +1,116 @@
+body.bm-Junglück-T07 {
+    .giff-conatiner {
+        order: -1;
+        @media (min-width: 1024px) {
+            grid-column: 1 / 3;
+            order: unset;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            grid-column: 1 / 3;
+            margin-bottom: 80px;
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            grid-column: 1 / 3;
+            order: -1;
+            margin-bottom: 30px;
+        }
+
+        .giff-inner {
+            height: 100%;
+            padding: 0 40px;
+            position: relative;
+            &:hover .button-row {
+                opacity: 1;
+            }
+            .product-row {
+                display: flex;
+                justify-content: space-between;
+                padding-top: 8px;
+                div {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #464646;
+                }
+                @media (max-width: 767px) {
+                    font-size: 14px;
+                }
+            }
+            .button-row {
+                justify-content: center;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 40px;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                @media(max-width:767px){
+                    position: unset;
+                    opacity: 1;
+                }
+
+                .bm-submit-button {
+                    max-width: 250px;
+                    width: 100%;
+                    letter-spacing: 0.08em;
+                    @media(max-width:767px){
+                        max-width: 150px;
+                    }
+                    a {
+                        @media (min-width: 768px) {
+                            font-size: 16px;
+                            height: 50px;
+                            line-height: 16px;
+                            padding: 15px 20px;
+                        }
+
+                        @media (max-width: 767px) {     
+                            font-size: 14px;                                             
+                            background: transparent;                          
+                            font-weight: normal;
+                            color: rgba(107,114,128);
+                            margin-top: 10px;
+                        }
+                        display: block;
+                        text-decoration: none !important;
+                        text-align: center;                       
+                        background: #464646;
+                        border: 1px solid #464646;
+                        border-radius: 3px;
+                        color: #fff;
+                        font-size: 12px;
+                        font-weight: 400;
+                        height: 40px;
+                        line-height: 12px;
+                        padding: 12px 10px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        &:hover {
+                            background-color: #adadad;
+                            border-color: #adadad;
+                        }
+                    }
+                }
+            }
+            img {
+                height: 95%;
+            }
+        }
+    }
+
+    .card__container:nth-child(1) {
+        order: -1;
+    }
+    .card__container:nth-child(2) {
+        order: -1;
+    }
+    .card__container:nth-child(3) {
+        order: -1;
+
+        @media (max-width: 767px) {
+            order: unset;
+        }
+    }
+}
