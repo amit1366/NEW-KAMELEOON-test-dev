@@ -1,6 +1,4 @@
-import { commongoals } from "./common"
 
-commongoals()
 function init() {
 
     Kameleoon.API.Utils.querySelectorAll('body')[0].classList.add('bm-LC-t12')
@@ -26,6 +24,31 @@ function init() {
 
 }
 
+function goals(){
+    Kameleoon.API.Utils.addUniversalClickListener(document, ({ target }) => {
+
+        // click on bm color link
+        if (target.closest('.bm-moreColor')) {
+             Kameleoon.API.Goals.processConversion(goals['[T12] Klick weitere Farben']);
+            console.log('[T12] Klick weitere Farben');
+        }
+
+        // click on product name
+        if (target.closest('.listing--container .product--title')) {
+             Kameleoon.API.Goals.processConversion(goals['[T12] Klick product name']);
+            console.log('[T12] Klick product name');
+        }
+
+        // click on product image
+        if (target.closest('.listing--container .product--image')) {
+             Kameleoon.API.Goals.processConversion(goals['[T12] Klick product image']);
+            console.log('[T12] Klick product image');
+        }
+
+    });
+}
+
 Kameleoon.API.Core.runWhenElementPresent('.listing--container .has--variants .area--product-info', () => {
     init();
+    goals();
 }, 500);
