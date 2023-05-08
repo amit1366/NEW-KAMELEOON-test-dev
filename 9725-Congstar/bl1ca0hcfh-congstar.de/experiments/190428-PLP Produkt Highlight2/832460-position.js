@@ -1,6 +1,6 @@
 console.log('Sticky Add2Cart');
 import { giffstring } from "./html";
-// import {elementInViewport2(el)} from "./function.js"
+
 
 
 // viewport helper
