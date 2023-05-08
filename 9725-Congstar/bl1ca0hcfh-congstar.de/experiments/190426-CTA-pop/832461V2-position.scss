@@ -1,0 +1,122 @@
+html body.bm-falke-t10 {
+ 
+    .bmproduct-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bmproduct-btn span {
+        padding: 10px;
+        background: #000;
+        color: #fff;
+        width: 200px;
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        cursor: pointer;
+        display: none;
+    }
+    .products-list__element .product-box:hover .bmproduct-btn span{
+        display: block;
+    }
+
+    .bmproduct-size-container{
+
+        padding: 5px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .bm-size{
+            font-size: 14px;
+            width: auto;
+            padding: 0;
+            margin: 5px;
+            text-align: center;
+            font-weight: 300;
+            cursor: pointer;
+            min-width: 70px;
+            height: 35px;
+            line-height: 33px;
+            border: 1px solid #f3f3f3;
+            display: none;
+        }
+        .bm-size.bm-size-selected{
+            border-color: #1a1919;
+            cursor: default;
+            font-weight: 500;
+        
+        }
+    }
+
+    .products-list__element .product-box:hover{
+
+        .bmproduct-size-container.show-bm-size{
+            .bm-size{
+                display: inline-block;
+            }
+        }
+
+        .product-box__colors{
+            top: 55px;
+        }
+    }
+
+    .bm--size-iframe{
+        display: none;
+    }
+    
+    .bm-loader-container{
+        display: none;
+        width: 200px;
+        height: 200px;
+        font-size: 30px;
+        padding: 1em;
+        position: fixed;
+        margin-bottom: .25em;
+        vertical-align: top;
+        transition: .3s color, .3s border, .3s transform;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+
+        .bm-loader {
+            display: inline-block;
+            width: 3em;
+            height: 3em;
+            color: inherit;
+            vertical-align: middle;
+            pointer-events: none;
+            border: .2em solid currentcolor;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: 1s loader-03 linear infinite;
+            position: relative;
+        }
+    }
+    .bm-loader-container.show-loader{
+        display: inline-block;
+    }
+
+    @media (max-width: 1024px) {
+        .bmproduct-size-container,
+        .bmproduct-size-container.show-bm-size,
+        .bmproduct-btn{
+            display: none;
+        }
+    }
+
+}
+
+@keyframes loader-03 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

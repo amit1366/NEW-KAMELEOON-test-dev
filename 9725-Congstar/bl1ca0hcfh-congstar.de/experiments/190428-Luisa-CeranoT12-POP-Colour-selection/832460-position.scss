@@ -1,0 +1,23 @@
+html body.bm-LC-t12 {
+ 
+    .bm-moreColor {
+
+        a{
+            color: #000;
+            border-bottom: 1px solid #000;
+            font-size: 14px;
+            font-family: 'Neue Haas Unica W04 Light', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            text-decoration: none;
+            font-weight: normal;
+        }
+    }
+
+    .listing--container{
+
+        .has--variants .area--product-info{
+            .product--variants--info{
+                display: none;
+            }
+        }
+    } 
+}

@@ -1,5 +1,4 @@
-// energie and bonus 
-// energie and bonus 
+
 export const bmstring = `
   <div class="bm-overlay"></div>
   <div class="bm-popup">

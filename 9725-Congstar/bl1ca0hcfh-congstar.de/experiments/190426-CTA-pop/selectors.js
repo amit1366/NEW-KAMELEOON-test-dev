@@ -1,0 +1,22 @@
+export const selectors = {
+    body : "body",
+    bmSizeIframe : ".bm--size-iframe",
+    sizeBtnClicked : ".size-btn-clicked",
+    bmSize : ".bmproduct-size-container .bm-size",
+    productBoxDetails : ".product-box__details",
+    productBoxName : ".product-box__name",
+    bmSizeSelected : "bm-size-selected",
+    iframeElem : ".bm--size-iframe iframe",
+    pdpSizeVariationsSize : ".pdp-size-variations__size",
+    saleBoxButton : ".sale-box__button-to-cart button",
+    pdpSizeVariationsSizeSelected : "pdp-size-variations__size--selected",
+    productBoxElem : ".products-list__element .product-box",
+    bmproductSizeContainer : ".bmproduct-size-container",
+    sizeBtnClicked : "size-btn-clicked",
+    bmLoaderContainer : ".bm-loader-container",
+    showLoader : "show-loader",
+    showBmSize : "show-bm-size",
+    productBoxColors : ".product-box__colors",
+    productsListElement : ".products-list .products-list__element",
+    bmproductBtn : ".bmproduct-btn"
+}

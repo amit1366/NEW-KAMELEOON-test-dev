@@ -1,0 +1,38 @@
+html {
+    body.bm-Junglück-T07 {
+        .giff-conatiner {
+            order: -1;
+            @media (min-width: 1024px) {
+                grid-column: 1 / 3;
+                order: unset;
+            }
+            @media (max-width: 768px) {
+                grid-column: 1 / 3;
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                grid-column: 1 / 3;
+                order: -1;
+            }
+            .giff-inner {
+                height: 100%;
+                padding: 0 40px;
+                img {
+                    height: 95%;
+                }
+            }
+        }
+        .card__container:nth-child(1) {
+            order: -1;
+        }
+        .card__container:nth-child(2) {
+            order: -1;
+        }
+        .card__container:nth-child(3) {
+            order: -1;
+
+            @media (max-width: 767px) {
+                order: unset;
+            }
+        }
+    }
+}
