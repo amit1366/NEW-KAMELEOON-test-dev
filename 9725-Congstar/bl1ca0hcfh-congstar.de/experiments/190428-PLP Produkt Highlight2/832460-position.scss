@@ -1,0 +1,40 @@
+html body.bm_inviewport .bm-atc-wrapper  .bm-atc-inner {
+    opacity: 0;
+}
+html body .scroll-up-container {
+    opacity: 0;
+}
+
+html body .bm-atc-wrapper {
+    bottom: 1.5rem;
+    cursor: pointer;
+    position: fixed;   
+    transition: .45s cubic-bezier(.3, 0, .15, 1); 
+    width: 100%;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+}
+
+html body .bm-atc-wrapper .bm-atc-inner {
+    max-width: 90%;
+    width: 100%;
+}
+
+html body .bm-atc-wrapper .bm-atc-inner .bm-atc {
+    padding: 15px 30px;
+    border-radius: 8px;
+    background: #1B4B98;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+}
+
+
+html body .bm-atc-wrapper .bm-atc-inner .bm-atc .bm-cart-icon {
+    width: 31px;
+    height: auto;
+    padding-right: 8px;
+}
