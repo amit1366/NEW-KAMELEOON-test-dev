@@ -21,24 +21,7 @@ function elementInViewport2(el) {
     );
 }
 
-function elementInViewport(el) {
-    var top = el.offsetTop;
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
-    var height = el.offsetHeight;
 
-    while (el.offsetParent) {
-        el = el.offsetParent;
-        top += el.offsetTop;
-        left += el.offsetLeft;
-    }
-    return (
-        top < (window.pageYOffset + window.innerHeight) &&
-        left < (window.pageXOffset + window.innerWidth) &&
-        (top + height) > window.pageYOffset &&
-        (left + width) > window.pageXOffset
-    );
-}
 // function check element in viewport
 let body;
 function eleinviewport() {
@@ -48,11 +31,13 @@ function eleinviewport() {
     body.classList.add('Sticky-Add2Cart');
 
     // match condition element available
-    if (elementInViewport2(document.querySelector('button.btn-buy'))) {
-        body.classList.remove("bm_inviewport");
-        // console.log('body');			
-    } else {
-        body.classList.add("bm_inviewport");
+    if (kameleoon.querySelectorAll('button.btn-buy')[0]) {
+        if (elementInViewport2(document.querySelector('button.btn-buy'))) {
+            body.classList.remove("bm_inviewport");
+            // console.log('body');			
+        } else {
+            body.classList.add("bm_inviewport");
+        }
     }
 
     // check shedow element
@@ -64,9 +49,8 @@ function eleinviewport() {
         if (shadowRoot) {
             let shadowRootel = shadowRoot.querySelector('.buybox__actions button');
             // Use standard DOM methods to access elements in the Shadow DOM
-            if (elementInViewport(shadowRootel)) {
-                body.classList.remove("bm_inviewport");
-                // console.log('body');			
+            if (elementInViewport2(shadowRootel)) {
+                body.classList.remove("bm_inviewport");		
             } else {
                 body.classList.add("bm_inviewport");
             }
@@ -87,6 +71,7 @@ export function stickybanner() {
 
     // simple page elment
     document.querySelector('.bm-atc').addEventListener("click", function () {
+        console.log('click sticky btn goal');
         document.querySelector('button.btn-buy').click()
     });
 
@@ -97,12 +82,18 @@ export function stickybanner() {
         let shadowRootel = hostshadow.shadowRoot;
 
         // Use standard DOM methods to access elements in the Shadow DOM
-        const shadowel = shadowRootel.querySelector('.buybox__actions button');
+        let btndesable;
+        let shadowel = shadowRootel.querySelector('.buybox__actions button');
+        btndesable = shadowRootel.querySelector('.buybox__actions button[disabled]');
+        console.log(btndesable);
         shadowel.setAttribute('style', 'padding:15px 10px;')
         //style="padding: 15px 10px;"
         // kameleoon.querySelectorAll('')
         document.querySelector('.bm-atc').addEventListener("click", function () {
-            shadowel.click()
+            if (!btndesable) {
+                console.log('click sticky btn goal');
+                shadowel.click()
+            }
         });
     }
 
