@@ -1,15 +1,14 @@
-import { goals } from './goals';
+// import { goals } from './goals';
 
-    Kameleoon.API.Core.runWhenElementPresent('.listing--container .has--variants .area--product-info', () => {
+export function triggergial() {
+    Kameleoon.API.Core.runWhenElementPresent('button.btn-buy, .buybox__actions button', () => {
         // console.log(' inside main function - common code');
         Kameleoon.API.Utils.addUniversalClickListener(document, ({ target }) => {
-
-            // click on the control color bubble
-            if (target.closest('.listing--container .product--variants--info')) {
-                 Kameleoon.API.Goals.processConversion(goals['[T12] Klick colour Bubbles']);
-                console.log('[T12] Klick colour Bubbles');
-            }
-
-        });
+                console.log('click');
+                if (target.closest('.bm-atc')) {
+                    console.log('sticky btn clicked');
+                }
+            });
 
     }, 200);
+}

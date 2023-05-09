@@ -1,23 +1,48 @@
-html body.bm-LC-t12 {
- 
-    .bm-moreColor {
+html body .scroll-up-container{
+    display: none !important;
+}
+html body.bm_inviewportterecot .bm-atc-wrapper,
+html body.bm_inviewport .bm-atc-wrapper{
+    display: block;
+}
 
-        a{
-            color: #000;
-            border-bottom: 1px solid #000;
-            font-size: 14px;
-            font-family: 'Neue Haas Unica W04 Light', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-            text-decoration: none;
-            font-weight: normal;
-        }
-    }
+html body .bm-atc-wrapper {
+    cursor: pointer;
+    position: fixed;  
+    bottom: .6rem; 
+    width: 100%;
+    z-index: 700;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
 
-    .listing--container{
+html body .bm-atc-wrapper .bm-atc-inner {
+    width: 90%;
+    margin: 0 auto;
+}
 
-        .has--variants .area--product-info{
-            .product--variants--info{
-                display: none;
-            }
-        }
-    } 
+html body .bm-atc-wrapper .bm-atc-inner .bm-atc {
+    padding: 15px 30px;
+    border-radius: 8px;
+    background: #1B4B98;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+}
+
+
+html body .bm-atc-wrapper .bm-atc-inner .bm-atc .bm-cart-icon {
+    width: 31px;
+    height: auto;
+    padding-right: 8px;
+}
+html body .row.header-search-mobile{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.row.header-search-mobile .header-search{
+    width: 100%;
 }
