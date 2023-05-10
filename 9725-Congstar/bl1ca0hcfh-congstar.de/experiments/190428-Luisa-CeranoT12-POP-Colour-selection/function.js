@@ -2,22 +2,31 @@ import { giffstring } from "./html";
 
 
 // viewport helper
-function elementInViewport2(el) {
-    var top = el.offsetTop;
-    var left = el.offsetLeft;
-    var width = el.offsetWidth;
-    var height = el.offsetHeight;
+// function elementInViewport2(el) {
+//     var top = el.offsetTop;
+//     var left = el.offsetLeft;
+//     var width = el.offsetWidth;
+//     var height = el.offsetHeight;
 
-    while (el.offsetParent) {
-        el = el.offsetParent;
-        top += el.offsetTop;
-        left += el.offsetLeft;
-    }
+//     while (el.offsetParent) {
+//         el = el.offsetParent;
+//         top += el.offsetTop;
+//         left += el.offsetLeft;
+//     }
+//     return (
+//         top < (window.pageYOffset + window.innerHeight) &&
+//         left < (window.pageXOffset + window.innerWidth) &&
+//         (top + height) > window.pageYOffset &&
+//         (left + width) > window.pageXOffset
+//     );
+// }
+function elementInViewport2(el) {
+    var rect = el.getBoundingClientRect();
     return (
-        top < (window.pageYOffset + window.innerHeight) &&
-        left < (window.pageXOffset + window.innerWidth) &&
-        (top + height) > window.pageYOffset &&
-        (left + width) > window.pageXOffset
+        rect.bottom - 130 > 0 &&
+        rect.top < window.innerHeight &&
+        rect.right > 0 &&
+        rect.left < window.innerWidth
     );
 }
 
