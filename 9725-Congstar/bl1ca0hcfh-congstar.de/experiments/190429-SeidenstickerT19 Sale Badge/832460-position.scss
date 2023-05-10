@@ -1,0 +1,26 @@
+html body{
+    .article-item{
+        .image-full-container{
+           .product-slider-wrapper{
+           position: relative;
+           .bm-discount-batch{
+            position: absolute;
+            bottom: 16px;
+            right: 0px;
+            .cell{
+                background-Color: #cc0000ff;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1px 15px;
+                p{
+                    margin-bottom: 0;
+                    font-size: 16px;
+                }
+            }
+           }
+           }
+        }
+    } 
+}
