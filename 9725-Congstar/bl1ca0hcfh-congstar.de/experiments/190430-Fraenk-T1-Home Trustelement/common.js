@@ -94,6 +94,11 @@ Kameleoon.API.Core.runWhenElementPresent('.tariff-pricing__addition', () => {
             // Kameleoon.API.Goals.processConversion(goals['[GG] Click 4 friends']);
             console.log('[GG] Click 4 friends');
         }
+        let mobClick = target.closest('.smart-banner .smart-banner__button')
+        if(mobClick){
+            // Kameleoon.API.Goals.processConversion(goals['[GG] Mobile Click Download']);
+            console.log('[GG] Mobile Click Download');
+        }
     });
 
    
